@@ -1,0 +1,155 @@
+
+    /* 右侧浮动栏  浮动ＱＱ*/
+    .my-kefu {
+        position: fixed;
+        right: 0px;
+        top: 18%;
+        z-index: 9999;
+    }
+
+    .my-kefu ul {
+        width: 77px;
+    }
+
+    .my-kefu li a {
+        text-decoration: none;
+    }
+
+    .my-kefu li {
+        background: #3998FC; /*#c80919*/;
+        transparent;
+        margin-top: 1px;
+        padding: 4px 0;
+        height: 75px;
+        width: 77px;
+    }
+
+    .my-kefu li i {
+        background: url(http://login.114my.cn/memberpic/076986711655/uploadfile/image/20190417/20190417155847_37000506.png) no-repeat;
+        display: block;
+        width: 30px;
+        height: 27px;
+        margin: 0px auto;
+        text-align: center;
+    }
+
+    .my-kefu li p {
+        height: 20px;
+        line-height: 20px;
+        overflow: hidden;
+        text-align: center;
+        color: #fff;
+    }
+
+    .my-kefu .my-kefu-qq i {
+        background-position: 4px 0;
+    }
+
+    .my-kefu .my-kefu-tel i {
+        background-position: 0 -25px;
+    }
+
+    .my-kefu .my-kefu-tel1 i {
+        background-position: -35px 4px;
+    }
+
+    .my-kefu .my-kefu-tel1:hover {
+        width: 246px;
+        height: 155px;
+    }
+
+    .my-kefu .my-kefu-tel2 i {
+        background-position: -35px 4px;
+    }
+
+    .my-kefu .my-kefu-tel2:hover {
+        width: 246px;
+        height: 155px;
+    }
+
+    .my-kefu .my-kefu-liuyan i {
+        background-position: 4px -53px;
+    }
+
+    .my-kefu .my-kefu-weixin i {
+        background-position: -34px 4px;
+    }
+
+    .my-kefu .my-kefu-weibo i {
+        background-position: -30px -22px;
+    }
+
+    .my-kefu .my-kefu-ftop {
+        background-color: #3998FC;
+    }
+
+    .my-kefu .my-kefu-ftop i {
+        width: 33px;
+        height: 35px;
+        background-position: -27px -51px;
+    }
+
+    .my-kefu-left {
+        float: left;
+        width: 77px;
+        height: 47px;
+        position: relative;
+    }
+
+    .my-kefu-tel-right {
+        font-size: 20px;
+        color: #fff;
+        float: left;
+        height: 46px;
+        line-height: 24px;
+        padding-left: 15px;
+        border-left: 1px solid #fff;
+        padding-top: 8px;
+    }
+
+    .my-kefu-tel1-right {
+        font-size: 20px;
+        color: #fff;
+        float: left;
+        height: 24px;
+        line-height: 22px;
+        margin-top: 8px;
+        border: none;
+        margin: 0 auto;
+        margin-bottom: 5px;
+    }
+
+    .my-kefu-tel2-right {
+        font-size: 20px;
+        color: #fff;
+        float: left;
+        height: 24px;
+        line-height: 22px;
+        margin-top: 8px;
+        border: none;
+        margin: 0 auto;
+        margin-bottom: 5px;
+    }
+
+    .my-kefu-right {
+        width: 20px;
+    }
+
+    .my-kefu-tel-main {
+        color: #fff;
+        margin-top: 9px;
+        height: 47px;
+        width: 247px;
+    }
+
+    .my-kefu-main {
+        width: 97px;
+        position: relative;
+    }
+
+    .my-kefu-weixin-pic {
+        position: absolute;
+        left: -130px;
+        top: -24px;
+        display: none;
+    }

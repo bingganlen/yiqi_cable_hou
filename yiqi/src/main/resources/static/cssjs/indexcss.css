@@ -1,0 +1,152 @@
+.brandss{
+    height:36px;line-height:36px;
+}
+ .ba{
+    line-height:36px;color:#0;
+}
+ <!--
+                body {
+            	background-color: #fff;
+            
+
+
+
+
+
+            background-position:top center;margin-left:0px;
+            COLOR:;
+            margin-top: 0px;margin-right: 0px;margin-bottom:0px;
+            font-size: 12px;
+            }
+            A:link {
+            FONT-SIZE: 12px;
+            COLOR: ;
+            TEXT-DECORATION: none}
+            A:visited {
+            FONT-SIZE: 12px;
+            COLOR: ;
+            TEXT-DECORATION: none}
+            A:hover {
+            FONT-SIZE: 12px;
+            COLOR: ;
+            TEXT-DECORATION: none}
+            
+
+
+/*导航样式开始*/
+
+            #webdh {
+            text-align:center;
+            vertical-align:middle;
+            width: 1002px;
+            height:20px;
+            margin: 0 auto;
+            font-size: 12px;
+            font-weight: normal;
+            COLOR: ;
+            
+            	background-color: ;
+            
+            overflow:hidden;
+            }
+            #webdh A:link {FONT-SIZE: 12px;COLOR: ; TEXT-DECORATION: none}
+            #webdh A:visited {FONT-SIZE: 12px;COLOR: ; TEXT-DECORATION: none}
+            #webdh A:hover {FONT-SIZE: 12px;COLOR: ; TEXT-DECORATION: none}
+            #copy {text-align:center;width:1002px;margin: 0 auto; line-height:150%;}
+            .clear {clear:both; height:0; overflow:hidden; display:block;}
+            .clearfix:after {clear:both; height:0; overflow:hidden; display:block; visibility:hidden; content:"."; }
+            -->
+            
+
+/*中间内容开始*/
+
+#bodycon {width:1250px;margin: 0 auto;}
+#bodycon #left {float: left;width: 245px;
+
+            	background-color: ;
+            
+}
+#bodycon #center {float:left;width: 757px;
+
+            	background-color: ;
+            
+}
+#bodycon #right {float:left;width: px;
+
+            	background-color: ;
+            
+}
+            
+/*中间内容结束*/
+
+
+/*详细内容开始*/
+
+            .bodycontent {/*width:760px;*/width:1096px;
+            margin: 0 auto;
+            line-height:180%;text-align:center;}
+            
+/*详细内容结束*/
+
+                /*新闻列表默认样式开始*/
+.shopmrsc:hover {
+                                background-color: #f9f9f9;
+}
+.shopmrsc {
+                                border-bottom: #efefef solid 1px;
+    overflow: hidden;
+    padding: 15px 5px;
+}
+.shopmrsc a {
+                                float: left;
+                                display: block;
+                                height: 135px;
+                                text-decoration: none;
+                                position: relative;
+}
+.shopmrsc a:hover {
+                                color: red;
+                                text-decoration: none;
+                            }
+.xwlb_img {
+	float:left;
+    margin-right: 15px;
+    width: 205px;
+	height: 135px;
+	background-color:#DBD9DA;
+}
+.xwlb_img img {
+    max-width: 205px;
+    max-height: 135px;
+    display: table-cell;
+}
+.shopmrsc p {
+    font-size: 16px;
+    font-weight: bold;
+    overflow: hidden;
+    text-align: left;
+    margin: 0 auto;
+    border-bottom: none;
+}
+.shopmrsc p.xwlbbt {
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    font-weight: normal;
+}
+.shopmrsc p.xwlbnr {
+    font-size: 14px;
+    font-weight: normal;
+    #height: 50px;
+    line-height: 24px;
+    margin-top: 7px;
+    color: #999;
+}
+.shopmrsc p.xwlbsj {
+    font-size: 14px;
+    font-weight: normal;
+    color: #787878;
+    position: absolute;
+    line-height: 20px;
+    bottom: 0;
+}
+/*新闻列表默认样式结束*/

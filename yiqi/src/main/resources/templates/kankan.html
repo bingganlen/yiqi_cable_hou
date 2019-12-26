@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<style type="text/css">
+    div.imgcontent{
+            overflow: hidden;
+            position: relative;
+        }
+        img.small{
+            float: left;
+            border:1px solid blue;
+        }
+        div.large{
+            float: left;
+            width:300px;
+            height:300px;
+            overflow: hidden;
+            position: relative;/**/
+        }
+        div.large>img{
+            width:600px;
+            display: none;
+            position:absolute;/**/
+        }
+        div.module{
+            width:150px;
+            height:150px;
+            background-color: rgba(255,255,255,.3);
+            border:1px solid #666666;
+            position:absolute ;
+            top:0;
+            left:0;
+            display: none;
+        }
+        div.module:hover{
+            cursor: move;
+        }
+        p{
+            text-indent:2em;    /*每个P段落，首行空出两个空格，即缩进两个字符*/
+        }
+
+
+        /* 两个按钮 */
+        .selectmouse{
+            width: 96%;
+            height: auto;
+        }
+        .selectmouse ul li{
+            list-style: none;
+            float: left;
+            line-height: 20px;
+            border: 1px solid #D9D9D9;
+            margin-left: 6px;
+            _margin-left: 6px;
+            padding: 5px;
+            cursor: pointer;
+            cursor: hand;
+            margin-bottom: 4px;
+            _margin-bottom: 4px;
+        }
+            
+
+
+</style>
+<!--
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+-->
+
+    <script th:src="@{js/jquery-3.3.1.min.js}"></script>
+    <script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js}" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css}" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+
+<body>
+
+<!-- 模态框示例（Modal） -->
+
+
+    <div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 700px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        <span id="title">电缆详情</span>
+                    </h4>
+                </div>
+
+
+                <div class="modal-body" >
+
+                    
+                        <div class="form-group">
+                            <div class="imgcontent">
+                                <img class="small" src="img/20170228173358_1117560304.jpg" width="300" />
+                                <div class="module"></div>
+                                <div class="large">
+                                    <img src="img/20170228173358_1117560304.jpg" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        
+
+                        <div class="form-group">
+                            <div class="selectmouse">
+                                 <ul>
+                                    <li id="getd1" onmousemove=""
+                                    style="background:#F0F0F0;margin-left:0px;">
+                                        <h3>详情说明</h3>
+                                    </li>
+                                    <li id="getd2" onmousemove="" >  
+                                        <h3>商品介绍</h3>
+                                    </li>
+                                 </ul>
+                            </div>
+                                <!-- <textarea  class="form-control"  name="remark" value="" id="remark" placeholder="备注" style="width:100%;"></textarea> -->
+
+                            <p>YJV交联聚乙烯绝缘的优点=交联聚乙烯绝缘电力电缆具有卓越的热一机械性能，优异的电气性能和耐化学腐蚀性能，还具有结构简单，重量轻，敷设不受落差限制等优点，是目前广泛于城市电网，矿山和工厂的新颖电缆。电缆的绝缘-交联聚乙烯是利用化学方法和物理方法使线型分子结构的聚乙烯转化为立体网状结构的聚乙烯，从而大幅度的提高了聚乙烯的热机械性，从而保持了优异的电气性能。交联聚乙烯绝缘电力电缆导体 额定工作温度为90°，比聚氯乙烯绝缘聚乙烯绝缘电缆均高，所以电缆的载流量也进一步提高。</p>
+
+                            <p>适用于交流电压300/500V及以下动力装置、日用电器、仪表及电信设备用的电缆电线。</p>
+
+                            <p>阻燃型电缆（电线）的特点是不易着火或着火后火焰蔓延较慢并能控制在一定的范围内，其使用于对阻燃性能较高的场合。阻燃电缆（电线）分为A类、B类、C类等三个级别，其中A类阻燃性能最优。</p>
+
+                            <p>耐火型电缆（电线）的特点是电缆除了能在正常的工作条件下传输电力，还可在燃烧的状况下仍能保持一定时间的安全运行，其使用在对电缆特性有要示的场合。耐火电缆（电线）分为A类和B类二个级别，可根据不同的要求选择不同类别的耐火电缆。</p>
+
+                                
+                        </div>
+          
+
+                </div>
+
+
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        提交
+                    </button><span id="tip"> </span>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+
+
+
+        <script type="text/javascript">
+                //模态框居中问题 start
+                /*function centerModals() {
+                    $('.modal').each(function(i) {
+                        var $clone = $(this).clone().css('display', 'block').appendTo('body');
+                        var top = Math.round(($clone.height() - $clone.find('.modal-content').height()) / 2);
+                        top = top > 50 ? top : 0;
+                        $clone.remove();
+                        $(this).find('.modal-content').css("margin-top", top - 50);
+                    });
+                }
+                // 在模态框出现的时候调用垂直居中方法
+                $('.modal').on('show.bs.modal', centerModals);
+                // 在窗口大小改变的时候调用垂直居中方法
+                $(window).on('resize', centerModals);
+                //模态框居中问题end
+*/
+
+            $("#showModal").modal('show')
+        </script>
+
+        <script type="text/javascript">
+            $('.imgcontent').mousemove(function(e){
+               var mx = e.pageX-$(this).offset().left;
+               var my = e.pageY-$(this).offset().top;
+        //           让鼠标在module正中间
+               var left = mx-$('.module').width()/2;
+               var top = my-$('.module').height()/2;
+               if(mx>0&&my>0&&mx<$('.small').width()&&my<$('.small').height()){
+        //           防止溢出
+               var L = (left<0)?0:(left>$('.small').width()-$('.module').width())?$('.small').width()-$('.module').width():left;
+                   var T = (top<0)?0:(top>$('.small').height()-$('.module').height())?$('.small').height()-$('.module').height():top;
+                   $('div.module').css('display','block').css('left',L+'px').css('top',T+'px');
+        //           显示放大照片
+               var largeLeft = L*$('.large').width()/$('.module').width();//L*(300/150);
+               var largeTop = T*$('.large').height()/$('.module').height();//T*(300/150);
+               $('.large>img').css('display','block').css('left',0-largeLeft+'px').css('top',0-largeTop+'px');
+                }
+        /*为什么left：0-largeLeft？ 
+        因为你好好想想，你鼠标往左移动时候，div.large中的图片却是向右移动的，鼠标向右移动时，div.large中的图片是向左动的。
+        鼠标向上移动时，div.large中的图片是向下动的。
+        鼠标向下移动时，div.large中的图片是向上动的。
+        所以要用0减去！*/
+
+               else{
+                   $('div.module').css('display','none');
+        //           隐藏放大照片
+                $('.large>img').css('display','none');
+               }
+          })
+        </script>
+
+    </div>
+</body>
+</html>

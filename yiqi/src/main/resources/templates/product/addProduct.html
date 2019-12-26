@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>商品信息上传Demo</title>
+    <script th:src="@{js/jquery-3.3.1.min.js}"></script>
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+    <script th:src="@{js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" th:href="@{css/fileinput.css}">
+    <script th:src="@{js/fileinput.js}"></script>
+    <script th:src="@{js/theme.js}"></script>
+    <script th:src="@{js/zh.js}"></script>
+
+    <!-- bootstarp 选择框 下拉框 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+</head>
+<body>
+
+<!--<div></div>-->
+<!--<h2>商品图片和信息上传</h2>-->
+
+<div class="container">
+<div class="modal-dialog" style="width: 700px;">
+
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+                <span id="title">商品图片和信息上传</span>
+            </h4>
+        </div>
+
+        <div class="modal-body" >
+            <div class="form-group">
+                <h5>选择品牌名</h5>
+                <select class="form-control" name="brand" id="brand">
+
+                </select>
+                <!--<input type="text" name="brand" id="brand" class="form-control" placeholder="请输入品牌名">-->
+
+            </div>
+            <div class="form-group">
+                <input type="text" name="productName" id="productName" class="form-control" placeholder="请输入产品名">
+            </div>
+            <div class="form-group">
+                <!--<input type="text" name="content" class="form-control" placeholder="参数">-->
+                <h3>商品参数</h3>
+                <textarea class="form-control" name="content" id="content" rows="16" style="min-width: 90%"></textarea>
+            </div>
+            <div class="form-group">
+                <h3>商品详情</h3>
+                <!--<input type="text" name="detail" class="form-control" placeholder="商品详情">-->
+                <textarea class="form-control" name="detail" id="detail" rows="16" style="min-width: 90%"></textarea>
+            </div>
+
+            <div class="form-group">
+                <form enctype="multipart/form-data">
+                    <div class="form-group center-block" style="width: 600px;" >
+                        <input id="file" type="file" name="file"  class="file" data-browse-on-zone-click="true">
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>-->
+                <button type="submit" id="dosubmit" class="btn btn-primary" onclick="return CheckPost();">
+                    提交
+                </button>
+                <input class="btn btn-primary" type="button" onclick="javascript:history.back(-1);" value="返 回" >
+                <span id="tip"> </span>
+            </div>
+    </div><!-- /.modal-content -->
+</div>
+</div>
+
+<script src="js/initFileInput.js"></script>
+<script>
+
+    /* 品牌下拉框 */
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "/AllBrandName", //url
+        success: function (bandlist) {
+            if (bandlist.length > 0) {
+                for (var i = 0; i < bandlist.length; i++) {
+                    var item=bandlist[i];
+                    $('#brand')
+                        .append('<option value="' + item + '">'  + item +   '</option>');
+
+                }
+            }
+        }
+    });
+
+    //初始化fileinput
+    initFileInput("file","/uploadImg");
+
+    function CheckPost() {
+        var brandText = $("#brand").val();
+        var productName = $("#productName").val();
+        var content = $("#content").val();
+        var detail = $("#detail").val();
+
+        if (brandText == "")
+        {
+            //document.getElementById("Err").innerHTML = "请填写品牌名！";
+            // addForm.brand.focus();  鼠标移动到该按钮
+            alert("请填写品牌名");
+            return false;
+        }
+        if (productName == "") {
+            alert("请填写产品名");
+            return false;
+        }
+
+        // TODO 不确定商品参数和详情是否一定不为空
+        /*if (content == "")
+        {
+            //document.getElementById("Err").innerHTML = "请填写系列名！";
+            // addForm.series.focus();
+            return false;
+        }*/
+
+        if ($("#file").val() != "") {
+            $('#file').fileinput('upload'); //触发插件开始上传。  （因为其它上传按钮隐藏了）
+            //todo fileinput('upload')  upload的值不确定要改成uploadImg
+        }
+    }
+
+</script>
+</div>
+</body>
+</html>

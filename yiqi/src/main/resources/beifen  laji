@@ -1,0 +1,167 @@
+
+
+<!--显示分页信息
+<div class="modal-footer no-margin-top">
+    <div class="col-md-6">
+        当前第 [[${page.pageNum}]]页,共 [[${page.pages}]] 页.一共 [[${page.total}]] 条记录
+    </div>
+
+    <ul class="pagination pull-right no-margin">
+        <li th:if="${page.hasPreviousPage}">
+            <a th:href="'/usermanage?pageNum=1'">首页</a>
+        </li>
+
+        <li class="prev" th:if="${page.hasPreviousPage}">
+            <a th:href="'/usermanage?pageNum='+${page.prePage}">
+                <i class="ace-icon fa fa-angle-double-left"></i>
+            </a>
+        </li>
+        &lt;!&ndash;遍历条数&ndash;&gt;
+        <li th:each="nav:${page.navigatepageNums}">
+            <a th:href="'/usermanage?pageNum='+${nav}" th:text="${nav}" th:if="${nav != page.pageNum}"></a>
+            <span style="font-weight: bold;background: #6faed9;" th:if="${nav == page.pageNum}" th:text="${nav}" ></span>
+        </li>
+
+        <li class="next" th:if="${page.hasNextPage}">
+            <a th:href="'/usermanage?pageNum='+${page.nextPage}">
+                <i class="ace-icon fa fa-angle-double-right"></i>
+            </a>
+        </li>
+
+        <li>
+            <a th:href="'/usermanage?pageNum='+${page.pages}">尾页</a>
+        </li>
+    </ul>
+</div>-->
+
+
+<!--<div class="modal-footer no-margin-top">
+    <strong>共<b>${page.totalCount}</b>条记录，共<b>${page.totalPage}</b>页</strong>
+    <ul class="pagination pull-right no-margin">
+
+        &lt;!&ndash; 首页 &ndash;&gt;
+        <li>
+            <a th:href="'/findPage?pageCode=1'">首页</a>
+        </li>
+
+        &lt;!&ndash; 上一页 &ndash;&gt;
+        <li th:if="${page.pageCode}  gt 8">
+            <a th:href="'/list?pageNum=' + ${page.previousPageable().getPageNumber()}" th:text="上一页"></a>
+        </li>
+
+        &lt;!&ndash; 中间页 &ndash;&gt;
+        <li th:each="pageNum:${#numbers.sequence(0, page.getTotalPages() - 1)}">
+            <a th:href="'/list?pageNum=' + ${pageNum}" th:text="${pageNum + 1}" th:if="${pageNum ne page.pageable.getPageNumber()}"></a>
+            <a th:href="'/list?pageNum=' + ${pageNum}" th:text="${pageNum + 1}" th:if="${pageNum eq page.pageable.getPageNumber()}" th:style="'font-weight:bold;background: #6faed9;'"></a>
+        </li>
+
+        &lt;!&ndash; 下一页 &ndash;&gt;
+        <li th:if="${page.hasNext()}">
+            <a th:href="'/list?pageNum=' + ${page.nextPageable().getPageNumber()}" th:text="下一页"></a>
+        </li>
+
+        &lt;!&ndash; 尾页 &ndash;&gt;
+        <li>
+            <a th:href="/findPage?pageCode=${page.totalPage}">尾页</a>
+        </li>
+    </ul>
+</div>-->
+
+<!--<form class="listForm" method="post" action="/yiqi/findPage">-->
+    <!--<div class="row">-->
+        <!--<div class="form-inline">-->
+            <!--<label style="font-size:14px;margin-top:22px;">-->
+                <!--<strong>共<b>${page.totalCount}</b>条记录，共<b>${page.totalPage}</b>页</strong>-->
+                <!--&nbsp;-->
+                <!--&nbsp;-->
+                <!--<strong>每页显示</strong>-->
+                <!--<input name="pageCode" value="${page.pageCode}" hidden="hidden"/>-->
+                <!--<select class="form-control" name="pageSize">-->
+                    <!--<option value="8" th:if="${page.pageSize} eq 8" selected>8</option>-->
+                    <!--<option value="16" th:if="${page.pageSize} eq 16 selected>16</option>-->
+                    <!--<option value="24" th:if="${page.pageSize} eq 24" selected>24</option>-->
+
+                <!--</select>-->
+                <!--<strong>条</strong>-->
+                <!--<button type="submit" class="btn btn-sm btn-info">GO!</button>-->
+            <!--</label>-->
+
+            <!--<ul class="pagination" style="float:right;">-->
+                <!--<li>-->
+                    <!--<a href="/findPage?pageCode=1"><strong>首页</strong></a>-->
+                <!--</li>-->
+                <!--<li th:if="${page.pageCode}  gt 8">-->
+                    <!--<a href="/findPage?pageCode=${page.pageCode - 1}">&laquo;</a>-->
+                <!--</li>-->
+
+                <!--&lt;!&ndash; 写关于分页页码的逻辑 &ndash;&gt;-->
+                <!--<c:choose>-->
+                    <!--<c:when test="${page.totalPage <= 5}">-->
+                        <!--<c:set var="begin" value="1"/>-->
+                        <!--<c:set var="end" value="${page.totalPage}"/>-->
+                    <!--</c:when>-->
+                    <!--<c:otherwise>-->
+                        <!--<c:set var="begin" value="${page.pageCode - 1}"/>-->
+                        <!--<c:set var="end" value="${page.pageCode + 3}"/>-->
+
+                        <!--&lt;!&ndash; 头溢出 &ndash;&gt;-->
+                        <!--<c:if test="${begin < 1}">-->
+                            <!--<c:set var="begin" value="1"/>-->
+                            <!--<c:set var="end" value="5"/>-->
+
+
+                            <!--&lt;!&ndash; 尾溢出 &ndash;&gt;-->
+                            <!--<c:if test="${end > page.totalPage}">-->
+                                <!--<c:set var="begin" value="${page.totalPage -4}"/>-->
+                                <!--<c:set var="end" value="${page.totalPage}"/>-->
+
+                    <!--</c:otherwise>-->
+                <!--</c:choose>-->
+
+                <!--&lt;!&ndash; 显示页码 &ndash;&gt;-->
+                <!--<c:forEach var="i" begin="${begin}" end="${end}">-->
+                    <!--&lt;!&ndash; 判断是否是当前页 &ndash;&gt;-->
+                    <!--<c:if test="${i == page.pageCode}">-->
+                        <!--<li class="active"><a href="javascript:void(0);">${i}</a></li>-->
+
+                        <!--<c:if test="${i != page.pageCode}">-->
+                            <!--<li>-->
+                                <!--<a href="/findPage?pageCode=${i}&pageSize=${page.pageSize}">${i}</a>-->
+                            <!--</li>-->
+
+                <!--</c:forEach>-->
+
+                <!--<li>-->
+                    <!--<c:if test="${page.pageCode < page.totalPage}">-->
+                        <!--<a href="/findPage?pageCode=${page.pageCode + 1}">&raquo;</a>-->
+
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="/findPage?pageCode=${page.totalPage}"><strong>末页</strong></a>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</form>-->
+
+
+
+
+
+<!--<div class="pages_info products_pages_info bodycontent" style="padding-top:5px;padding-bottom:5px;">
+    总数:87&nbsp;&nbsp;
+    总页数:10&nbsp;&nbsp;
+    当前是:第1页&nbsp;第一页&nbsp;&nbsp;上一页&nbsp;&nbsp;<a href="products-2.html">下一页</a>&nbsp;&nbsp;<a href="products-10.html">最后页</a>转到<select
+        name="select" onChange="window.location.href=this.options[this.selectedIndex].value">
+    <option value="products-1.html" selected>第1页</option>
+    <option value="products-2.html">第2页</option>
+    <option value="products-3.html">第3页</option>
+    <option value="products-4.html">第4页</option>
+    <option value="products-5.html">第5页</option>
+    <option value="products-6.html">第6页</option>
+    <option value="products-7.html">第7页</option>
+    <option value="products-8.html">第8页</option>
+    <option value="products-9.html">第9页</option>
+    <option value="products-10.html">第10页</option>
+</select></div>
+</div>-->

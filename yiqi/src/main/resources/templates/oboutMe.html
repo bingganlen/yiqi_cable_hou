@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>林翼祺电缆有限公司</title>
+    <!-- 百度搜索时出现的   你自己要改 -->
+    <meta name="keywords" content="东莞电线电缆销售,成天泰电缆厂家,成天泰电线"/><!-- 百度搜索时的关键字    -->
+    <meta name="description"
+          content="东莞市晟业电缆有限公司是一家专业生产和销售各种型号电线电缆五金电器的企业单位,主要产品有东莞电线电缆,广东电线电缆,成天泰电缆代理,珠江电线电缆等,服务热线:0769-22232450"/>
+    <!--end-->
+
+    <script th:src="@{cssjs/indexjs.js}"></script>
+    <link rel="stylesheet" th:href="@{cssjs/indexcss.css}">
+    <link rel="stylesheet" th:href="@{cssjs/headcss.css}">
+    <link rel="stylesheet" th:href="@{cssjs/right_QQ.css}">
+
+
+</head>
+
+<body onload="themax();init();">
+
+<!--<link href="cssjs/allbag.css" rel="stylesheet" type="text/css"/>-->
+<link rel="stylesheet" th:href="@{cssjs/allbag.css}">
+
+<script type="text/javascript">
+    // 加入收藏 兼容360和IE6
+    function shoucang(sTitle, sURL) {
+        try {
+            window.external.addFavorite(sURL, sTitle);
+        }
+        catch (e) {
+            try {
+                window.sidebar.addPanel(sTitle, sURL, "");
+            }
+            catch (e) {
+                alert("加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+</script>
+
+<!--页头   这么明显的你肯定要改-->
+<div class="topbg">
+    <div class="top">
+        <div class="top1 fl">您好，欢迎访问东莞市晟业电缆有限公司网站！</div>
+        <div class="top2 fr"><a href="javascript:void(0)" onClick="shoucang(document.title,window.location)">加入收藏</a> /
+            <a href="feedback.html">在线留言</a> / <a href="dgweb-100841.html">联系我们</a> / <a href="/">返回首页</a></div>
+    </div>
+</div>
+
+
+<!--logo-->
+<div class="logo">
+    <div class="logo0 fl">
+        <div class="logo1"><a href="/">东莞市<span>晟业电缆</span>有限公司</a></div>
+        <div class="logo11">
+            | 专业生产和销售各种型号电线电缆五金电器 |
+        </div>
+    </div>
+    <div class="logo2 fr"><img src="img/20190924113719_1905694865.jpg" alt="全国服务热线"/></div>
+
+</div>
+
+<!--导航-->
+<div class="nav_bg">
+    <div class="nav box">
+
+        <ul class="menu">
+            <li class="/"><a href="./">网站首页</a></li>
+            <li><a id="aa1" href="company.html">关于我们</a></li>
+            <li><a id="aa2" href="products.html">品牌分类</a>
+                <ul>
+                    <li><a href="products-214034-214036-0.html">成天泰电缆</a></li>
+                    <li><a href="products-214034-214137-0.html">广州南洋电缆</a></li>
+                    <li><a href="products-214034-214139-0.html">民兴电缆</a></li>
+                    <li><a href="products-214034-214143-0.html">珠江电缆</a></li>
+                </ul>
+
+
+            </li>
+            <li><a id="aa3" href="#">荣誉证书</a></li>
+            <li><a id="aa4" href="#">工程案例</a></li>
+            <li><a id="aa5" href="#">新闻动态</a></li>
+            <li><a id="aa6" href="feedback.html">在线留言</a></li>
+            <li><a id="aa7" href="dgweb-100841.html">联系我们</a></li>
+
+        </ul>
+    </div>
+
+</div>
+
+<!--此段JS必须放置在导航代码以下-->
+<script type="text/javascript">
+    // JavaScript Document
+    var curUrl = location.pathname.substr(1);
+    if (curUrl.indexOf("company") > -1) {
+        document.getElementById('aa1').className = " a_nav";
+    }
+    ;
+    if (curUrl.indexOf("products") > -1) {
+        document.getElementById('aa2').className = " a_nav";
+    }
+    ;
+    if (curUrl.indexOf("100849") > -1) {
+        document.getElementById('aa3').className = " a_nav";
+    }
+    ;
+    if (curUrl.indexOf("103469") > -1) {
+        document.getElementById('aa4').className = " a_nav";
+    }
+    ;
+    if (curUrl.indexOf("news") > -1) {
+        document.getElementById('aa5').className = " a_nav";
+    }
+    ;
+    if (curUrl.indexOf("feedback") > -1) {
+        document.getElementById('aa6').className = " a_nav";
+    }
+    ;
+    if (curUrl.indexOf("100841") > -1) {
+        document.getElementById('aa7').className = " a_nav";
+    }
+    ;
+
+
+</script>
+<!--mobanhtml/#webdh#/pr-webdh##!"-->
+<div class="hua1"></div>
+<!--mobanhtml/center!@#"-->
+
+<div id="bodycon">
+
+    <div id="left">
+        <!--"../#innewclu!#/#left#/pr-left##!"-->
+        <div class="box_l fl">
+            <div class="title_bg">
+                <div class="font_c">产品分类</div>
+            </div>
+            <div class="left-box">
+                <div class="left1"><a href="#">品牌分类</a></div>
+                <div class="left2">
+                    <table width='180' border='0' cellspacing='0' cellpadding='0'>
+                        <tr>
+                            <td style='height:36px;line-height:36px;'>
+
+                                <a href='products-214034-214036-0.html'
+                                   title='成天泰电缆' style='line-height:36px;color:#0;'>
+                                    成天泰电缆
+                                </a></td>
+                        </tr>
+                        <tr>
+                            <td style='height:36px;line-height:36px;'>
+
+                                <a href='products-214034-214137-0.html'
+                                   title='广州南洋电缆' style='line-height:36px;color:#0;'>
+                                    广州南洋电缆
+                                </a></td>
+                        </tr>
+                        <tr>
+                            <td style='height:36px;line-height:36px;'>
+
+                                <a href='products-214034-214139-0.html'
+                                   title='民兴电缆' style='line-height:36px;color:#0;'>
+                                    民兴电缆
+                                </a></td>
+                        </tr>
+                        <tr>
+                            <td style='height:36px;line-height:36px;'>
+
+                                <a href='products-214034-214143-0.html'
+                                   title='珠江电缆' style='line-height:36px;color:#0;'>
+                                    珠江电缆
+                                </a></td>
+                        </tr>
+                        <tr>
+                            <td style='height:36px;line-height:36px;'>
+
+                                <a href='products-214034-266657-0.html'
+                                   title='坚宝电缆' style='line-height:36px;color:#0;'>
+                                    坚宝电缆
+                                </a></td>
+                        </tr>
+                        <tr>
+                            <td style='height:36px;line-height:36px;'>
+
+                                <a href='products-214034-266658-0.html'
+                                   title='金龙羽电缆' style='line-height:36px;color:#0;'>
+                                    金龙羽电缆
+                                </a></td>
+                        </tr>
+                        <tr></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div id="center">
+
+        <strong class="strong_title"><font face='Webdings'>4</font>联系我们</strong>
+
+        <div id="bodycontent" class="mianbxContent" style="height:25px;width:90%;text-align:right;">
+            您的位置:<a href="/">首页</a>&nbsp;->&nbsp;<a href="dgweb-100841.html">联系我们</a></div>
+
+        <div style="width:760px;
+margin: 0 auto;line-height:180%;" class="bodyContentString8"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="ke-zeroborder">
+            <tbody>
+            <tr>
+                <td colspan="2" valign="top" style="font-family:'微软雅黑';font-size:16px;line-height:32px;font-weight:bold;">
+                    尊敬的访客，当您进入“联系我们”的页面时，您已成为我们最尊贵的客户，欢迎您来到东莞市晟业电缆有限公司官网。
+                </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td colspan="2" valign="top" style="background:url(uploadfile/image/20170228/20170228203100_517331681.png) left center no-repeat;border-bottom:dashed 1px #bdbdbd;padding-left:45px;font-family:'微软雅黑';font-size:14px;line-height:48px;">
+                    地　址：东莞市莞城区元岭路105号
+                </td>
+            </tr>
+
+            <tr>
+            </tr>
+            <tr>
+                <td colspan="2" style="background:url(uploadfile/image/20170228/20170228203101_1217130644.png) left center no-repeat;border-bottom:dashed 1px #bdbdbd;padding-left:45px;line-height:48px;font-family:'微软雅黑';font-size:14px;">
+                    销售经理：侯先生/13669835869
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="background:url(uploadfile/image/20170228/20170228203100_747072917.png) left center no-repeat;border-bottom:dashed 1px #bdbdbd;padding-left:45px;line-height:48px;font-family:'微软雅黑';font-size:14px;">
+                    网　址：www.dgsydl.com
+                </td>
+            </tr>
+            <tr>
+            </tr>
+            
+            </tbody>
+        </table></div>
+    </div>
+    <div id="right">
+        <!--"../#innewclu!#/#right#/dgweb-right##!"-->
+
+    </div>
+    <div class="clear"></div>
+</div>
+<!--mobanhtml/copy!@#"-->
+<div id="copy"></div>
+
+<!--版权-->
+<div class="top30"></div>
+<div class="banqbg" style="background: #3998FC;">
+    <div class="banq">
+        <div class="banq1"><a href="/">网站首页</a>　/　<a href="company.html">关于我们</a>　/　<a
+                href="products.html">品牌分类</a>　/　<a href="dgweb-100849.html">荣誉证书</a>　/　<a
+                href="dgweb-103469.html">工程案例</a>　/　<a href="news.html">新闻动态</a>　/　<a href="feedback.html">在线留言</a>　/　<a
+                href="dgweb-100841.html">联系我们</a></div>
+    </div>
+</div>
+
+<div class="cl"></div>
+<div class="banq">
+    <div class="banq2">
+
+        东莞市晟业电缆有限公司 版权所有 © Copyright 技术支持：<a href="http://copyright.114my.net/" target="_blank">东莞网站建设</a> 【<a
+            href="guanli.htm" target="_blank" rel="nofollow">后台管理</a>】<br/>
+
+        销售商务：侯先生 13669835869 访问量：
+        <script language="javascript" src="http://login.114my.cn/app/webfwl.php?member=dgksdx"></script>
+        【<a href="sitemap.htm" target="_blank">BMAP</a>】【<a href="sitemap.xml" target="_blank">GMAP</a> 】<a
+            href="http://www.beian.miit.gov.cn" target="_blank">粤ICP备17010204号-1</a>
+        <script>
+            var _hmt = _hmt || [];
+            (function () {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?b4baadaf4a5275a3321ea2f57b1a5661";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+        【<a href="https://tongji.baidu.com/web/welcome/ico?s=b4baadaf4a5275a3321ea2f57b1a5661" target="_blank">百度统计</a>】
+        <br/>
+
+        *本站相关网页素材及相关资源均来源互联网，如有侵权请速告知，我们将会在24小时内删除*<br/>
+
+    </div>
+
+
+</div>
+
+
+<div class="my-kefu">
+    <ul id="my-kefu">
+
+
+        <li class="my-kefu-qq">
+            <div class="my-kefu-main">
+                <div class="my-kefu-left">
+                    <a class="online-contact-btn"
+                       href="http://wpa.qq.com/msgrd?v=3&uin=779807064&site=东莞市晟业电缆有限公司&menu=yes"
+                       target="_blank"><i></i>
+                        <p>QQ咨询</p>
+                    </a>
+                </div>
+            </div>
+        </li>
+
+
+        <li class="my-kefu-tel">
+            <div class="my-kefu-tel-main">
+                <div class="my-kefu-left"><i></i>
+                    <p>服务热线</p>
+                </div>
+                <div class="my-kefu-tel-right">13669835869</div>
+            </div>
+        </li>
+
+
+        <li class="my-kefu-tel2">
+            <div class="my-kefu-tel-main">
+                <div class="my-kefu-left"><i></i>
+                    <p>微信联系人</p>
+                </div>
+                <div class="my-kefu-tel2-right"><img style=" width:130px; height:130px;"
+                                                     src="img/20190901190716_1103942368.jpg" alt="微信联系人"/></div>
+            </div>
+        </li>
+
+
+        <li class="my-kefu-ftop">
+            <div class="my-kefu-main">
+                <div class="my-kefu-left">
+                    <a href="javascript:;"><i></i>
+                        <p>返回顶部</p>
+                    </a>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+</div>
+<!--<script src="http://114my.cn.114.114my.net/fyh/lz/jquery-1.8.3.min.js"></script>-->
+<script th:src="@{http://114my.cn.114.114my.net/fyh/lz/jquery-1.8.3.min.js}"></script>
+<script>
+    $(function () {
+        var time;
+        var winHeight = $(window.parent).height();
+        $('.my-kefu').css({'top': (winHeight - $('#my-kefu').height()) / 2});
+        $('#my-kefu li').on({
+            'mouseenter': function () {
+                var scope = this;
+                time = setTimeout(function () {
+                    var divDom = $(scope).children('div');
+                    var maxWidth = divDom.width();
+                    $(scope).stop().animate({marginLeft: -maxWidth + 77, width: maxWidth}, 'normal', function () {
+                        var pic = $(scope).find('.my-kefu-weixin-pic');
+                        if (pic.length > 0) {
+                            pic.show();
+                        }
+                    });
+                }, 100)
+
+            },
+            'mouseleave': function () {
+                var pic = $(this).find('.my-kefu-weixin-pic');
+                if (pic.length > 0) {
+                    pic.hide();
+                }
+                clearTimeout(time);
+                var divDom = $(this).children('div');
+                $(this).stop().animate({marginLeft: 0, width: 77}, "normal", function () {
+                });
+            }
+        });
+//返回顶部
+        $("#my-kefu").find(".my-kefu-ftop").click(function () {
+            var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+            if (scrollTop > 0) {
+                $("html,body").animate({
+                    scrollTop: 0
+                }, "slow");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

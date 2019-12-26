@@ -20,7 +20,7 @@ public class IndexController {
     private final static Logger logger = LoggerFactory.getLogger(IndexController.class);
     /**
      * 访问首页
-     * @return
+     * @returnm
      */
     @RequestMapping(value = "/index")
     public String index()
