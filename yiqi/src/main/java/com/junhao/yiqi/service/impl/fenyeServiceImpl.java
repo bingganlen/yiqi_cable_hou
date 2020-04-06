@@ -5,6 +5,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.junhao.yiqi.dao.BrandMapper;
 import com.junhao.yiqi.dao.ImgMapper;
+import com.junhao.yiqi.dao.productMapper;
 import com.junhao.yiqi.entity.PageBean;
 import com.junhao.yiqi.entity.PageRequest;
 import com.junhao.yiqi.entity.PageResult;
@@ -24,6 +25,8 @@ public class fenyeServiceImpl implements fenyeService {
 
     @Autowired
     private ImgMapper imgMapper;
+    @Autowired
+    private productMapper productMapper;
     @Autowired
     private BrandMapper brandMapper;
 
@@ -57,7 +60,7 @@ public class fenyeServiceImpl implements fenyeService {
     @Override
     public PageBean findByPage(productEntity productEntity, int pageCode, int pageSize) {
         PageHelper.startPage(pageCode,pageSize);//使用Mybatis分页插件
-        Page<productEntity> page = imgMapper.gettp2(productEntity);
+        Page<productEntity> page = productMapper.gettp(productEntity);
 
         //计算总页数：总页数 = 总记录数 / 每页显示的记录条数。这里用到的ceil()方法：返回大于或登录参数的最小double值，并等于数学整数。如double a = 5;double b = 3;ceil(a/b) = 2.0。最后用Double类的intValue()方法返回此Double值作为int类型的值。
         return new PageBean(pageCode, (int)Math.ceil((double) (page.getTotal() / (double)pageSize)), (int)page.getTotal(),  pageSize , page.getResult());
@@ -72,9 +75,7 @@ public class fenyeServiceImpl implements fenyeService {
         int pageCode = 1;
         int pageSize = 16;
         PageHelper.startPage(1,16);//使用Mybatis分页插件
-        Page<productEntity> page = imgMapper.gettp3();
-
-
+        Page<productEntity> page = imgMapper.gettp3();  // imgMapper.gettp3();
 
         //计算总页数：总页数 = 总记录数 / 每页显示的记录条数。这里用到的ceil()方法：返回大于或登录参数的最小double值，并等于数学整数。如double a = 5;double b = 3;ceil(a/b) = 2.0。最后用Double类的intValue()方法返回此Double值作为int类型的值。
         return new PageBean(pageCode, (int)Math.ceil((double) (page.getTotal() / (double)pageSize)), (int)page.getTotal(),  pageSize , page.getResult());
@@ -87,11 +88,16 @@ public class fenyeServiceImpl implements fenyeService {
         int pageSize = 16;
         PageHelper.startPage(1,16);//使用Mybatis分页插件
         Page<productEntity> page = imgMapper.gettp3();
+
         int begin=0;
         int end=0;
-        int totalPage = (int)Math.ceil((double) (page.getTotal() / (double)pageSize));
+        PageBean pageBean = new PageBean(pageCode, (int) Math.ceil((double) (page.getTotal() / (double) pageSize)), (int) page.getTotal(), pageSize, page.getResult());
+        int totalPage = (int)Math.ceil((double) (page.size() / (double)pageSize));//分页成功，打印数量ipage.getTotal() 都是0
+//        int totalPage = pageBean.getTotalPage();
+        //int totalPage = (int) page.getTotal();
         if (pageCode<= 5) {
             begin=1;end=totalPage;
+
         }else {
             begin=pageCode - 1; end=pageCode+4;
             if (begin<1) {//头溢出

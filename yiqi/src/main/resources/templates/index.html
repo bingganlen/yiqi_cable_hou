@@ -3,60 +3,131 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <!-- 百度搜索时出现的   你自己要改 -->
-    <meta name="keywords" content="东莞电线电缆销售,成天泰电缆厂家,成天泰电线"/><!-- 百度搜索时的关键字    -->
+    <meta name="keywords" content="广州联晨电子科技有限公司,电缆销售"/><!-- 百度搜索时的关键字    -->
     <meta name="description"
-          content="东莞市晟业电缆有限公司是一家专业生产和销售各种型号电线电缆五金电器的企业单位,主要产品有东莞电线电缆,广东电线电缆,成天泰电缆代理,珠江电线电缆等,服务热线:0769-22232450"/>
+          content="广州联晨电子科技有限公司是一家专业生产和销售各种型号电线电缆五金电器的企业单位,主要产品有东莞电线电缆,广东电线电缆,成天泰电缆代理,珠江电线电缆等,服务热线:15819652491"/>
     <!--end-->
-    <title>林翼祺电缆有限公司</title>
-
-
-
-
-    <link rel="stylesheet" th:href="@{cssjs/indexcss.css}">
-    <link rel="stylesheet" th:href="@{cssjs/headcss.css}">
-    <link rel="stylesheet" th:href="@{cssjs/right_QQ.css}">
-    <script th:src="@{cssjs/indexjs.js}"></script>
+    <title>广州联晨电子科技有限公司</title>
 
     <!--"../#innewclu!#/content!products#"-->
     <script th:href="@{cssjs/mzp-packed.js}" type="text/javascript" ></script>
     <link th:src="@{cssjs/magiczoomplus.css}" rel="stylesheet" type="text/css" media="screen" />
+    <!--<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">-->
     <link th:src="@{css/bootstrap.css}" rel="stylesheet" type="text/css" media="screen" />
-<!--    <script type="text/javascript">
-        // $(function () {})
-        function findpage(){
-            $.ajax({
-                type: "post",
-                url: "/findPage",
-                success: function (result) {
-                }
-            });
+
+    <link rel="stylesheet" th:href="@{cssjs/indexcss.css}">
+    <link rel="stylesheet" th:href="@{cssjs/headcss.css}">
+    <link rel="stylesheet" th:href="@{cssjs/right_QQ.css}">
+    <link th:href="@{cssjs/allbag.css}" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <!--<script th:src="@{http://114my.cn.114.114my.net/fyh/lz/jquery-1.8.3.min.js}"></script>-->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script th:src="@{cssjs/indexjs.js}"></script>
+    <style>
+        .pagination {
+            display: inline-block;
+            padding-left: 0;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .pagination ul {
+            display: block;
+            list-style-type: disc;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 40px;
+        }
+        .pagination>li {
+            display: inline;
+        }
+        .pagination>li:first-child>a, .pagination>li:first-child>span {
+            margin-left: 0;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+        .pagination>li>a, .pagination>li>span {
+            position: relative;
+            float: left;
+            padding: 6px 12px;
+            margin-left: -1px;
+            line-height: 1.42857143;
+            color: #337ab7;
+            text-decoration: none;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+    </style>
+    <!-- 商品详情 -->
+    <style type="text/css">
+        div.imgcontent{
+            overflow: hidden;
+            position: relative;
+        }
+        img.small{
+            float: left;
+            border:1px solid blue;
+        }
+        div.large{
+            float: left;
+            width:300px;
+            height:300px;
+            overflow: hidden;
+            position: relative;/**/
+        }
+        div.large>img{
+            width:600px;
+            display: none;
+            position:absolute;/**/
+        }
+        div.module{
+            width:150px;
+            height:150px;
+            background-color: rgba(255,255,255,.3);
+            border:1px solid #666666;
+            position:absolute ;
+            top:0;
+            left:0;
+            display: none;
+        }
+        div.module:hover{
+            cursor: move;
+        }
+        p{
+            text-indent:2em;    /*每个P段落，首行空出两个空格，即缩进两个字符*/
         }
 
 
-    </script>-->
+        /* 两个按钮 */
+        .selectmouse{
+            width: 96%;
+            height: auto;
+        }
+        .selectmouse ul li{
+            list-style: none;
+            float: left;
+            line-height: 20px;
+            border: 1px solid #D9D9D9;
+            margin-left: 6px;
+            _margin-left: 6px;
+            padding: 5px;
+            cursor: pointer;
+            cursor: hand;
+            margin-bottom: 4px;
+            _margin-bottom: 4px;
+        }
+    </style>
+
 
 
 </head>
 
 <body onload="themax();init();">
-
-<link th:href="@{cssjs/allbag.css}" rel="stylesheet" type="text/css"/>
-
-
-<!--页头   这么明显的你肯定要改-->
-<div class="topbg">
-    <div class="top">
-        <div class="top1 fl">您好，欢迎访问东莞市晟业电缆有限公司网站！</div>
-        <div class="top2 fr"><a href="javascript:void(0)" onClick="shoucang(document.title,window.location)">加入收藏</a> /
-            <a href="feedback.html">在线留言</a> / <a href="dgweb-100841.html">联系我们</a> / <a href="/">返回首页</a></div>
-    </div>
-</div>
-
-
 <!--logo-->
 <div class="logo">
     <div class="logo0 fl">
-        <div class="logo1"><a href="/">东莞市<span>晟业电缆</span>有限公司</a></div>
+        <div class="logo1"><a href="/">广州<span>联晨电子</span>科技有限公司</a></div>
         <div class="logo11">
             | 专业生产和销售各种型号电线电缆五金电器 |
         </div>
@@ -70,23 +141,22 @@
     <div class="nav box">
 
         <ul class="menu">
-            <li class="/"><a href="./">网站首页</a></li>
+            <li class="/"><a href="http://gzlcdx.com/">网站首页</a></li>
             <li><a id="aa1" href="#">关于我们</a></li>
             <li><a id="aa2" href="#">品牌分类</a>
-                <ul>
-                    <li><a href="products-214034-214036-0.html">成天泰电缆</a></li>
-                    <li><a href="products-214034-214137-0.html">广州南洋电缆</a></li>
-                    <li><a href="products-214034-214139-0.html">民兴电缆</a></li>
-                    <li><a href="products-214034-214143-0.html">珠江电缆</a></li>
+                <ul th:with="brandsa=${@fenyeService.allBrand()}">
+                    <li th:each="item:${brandsa}">
+                            <a th:href="@{'/findPage?brandName='+ ${item}}"
+                               th:title="${item}" class="ba" th:text="${item}">
+                            </a>
+                    </li>
                 </ul>
-
-
             </li>
             <li><a id="aa3" href="#">荣誉证书</a></li>
             <!--<li><a id="aa4" href="#">工程案例</a></li>-->
             <!--<li><a id="aa5" href="#">新闻动态</a></li>-->
             <li><a id="aa6" href="#">在线留言</a></li>
-            <li><a id="aa7" href="dgweb-100841.html">联系我们</a></li>
+            <li><a id="aa7" href="/toConnectUs">联系我们</a></li>
 
         </ul>
     </div>
@@ -167,17 +237,18 @@
         <strong class="strong_title">品牌分类</strong>
         <div class="mianbxContent bodycontent" style="height:25px;width:90%;text-align:right;">
             您的位置:
-            <a href="/">首页</a>&nbsp;->&nbsp;<a href="products.html">品牌分类</a></div>
+            <a href="/">首页</a>&nbsp;->&nbsp;<a >品牌分类</a></div>
         <!-- 直接table分页 -->
 
         <div class="bodycontent">
             <div th:each="pr : ${pages.beanList}"  class="pro_one_box"  style="width:251px; float:left;" >
                 <div class="pro_pic" style="height:173px;">
-                    <img th:src="${pr.productImage}"  th:title="${pr.productName}" class="img-thumbnail" width="230" height="173" border="0" style="border: 1px solid #C0C0C0" />
+                    <a th:href="@{/goods/show?id={id}(id=${pr.id})}"  ><!--th:href="@{/goods/show/{id}(id=${pr.id})}"-->
+                    <img th:src="${pr.productImage}"  th:title="${pr.productName}" class="img-thumbnail" width="230" height="173" border="0" style="border: 1px solid #C0C0C0" /></a>
                 </div>
 
                 <div class="pro_name" style="padding-top:5px;padding-bottom:5px;">
-                    <a th:href="@{/product/{id}(id=${pr.id})}" th:text="${pr.productName}" ></a>
+                    <a th:href="@{/goods/show?id={id}(id=${pr.id})}" th:text="${pr.productName}" ></a>
                 </div>
             </div>
         </div>
@@ -188,64 +259,38 @@
 </div>
 <!--</div>-->
 <div class="clear"></div>
-
-<div style="height: 100px;">
+<!--<div th:include="pagination :: page"></div>-->
+<div style="height: 100px; text-align: center;" >
     <div class="clear"></div>
     <form class="listForm" method="post" action="/findPage">
-        <div class="row">
-            <div class="form-inline" th:with="page=${@fenyeService.findByPage()} ,begin=${@fenyeService.begin()}">
-                <label style="font-size:11px;margin-top:22px;">
-                    <strong>共 <span th:text="${page.totalCount}"></span> 条记录，共<span th:text="${page.totalPage}"></span>页</strong>
-                    &nbsp;
-                    &nbsp;
-                    <strong>每页显示</strong>
-                    <input name="pageCode" th:value="${page.pageCode}" hidden="hidden"/>
-                    <select class="form-control" name="pageSize">
-                        <option value="8" th:selected="${page.pageSize eq 8}" selected >8</option>
-                        <option value="15" th:selected="${page.pageSize eq 16}" selected>16</option>
-                        <option value="20" th:selected="${page.pageSize eq 20}" selected>20</option>
-                        <!--<option value="20" th:if="${page.pageSize eq 20}" th:selected="selected" selected>20</option>-->
-                    </select>
-                    <strong>条</strong>
-                    &nbsp;
-                    &nbsp;
-                    <strong>到第</strong>&nbsp;<input type="text" size="3" id="page" name="pageCode" class="form-control input-sm"
-                                                    style="width:11%"/>&nbsp;<strong>页</strong>
-                    &nbsp;
-                    <button type="submit" class="btn btn-sm btn-info">GO!</button>
-                </label>
-
-                <ul class="pagination pagination-sm" style="float:right;">
-                    <li>
-                        <a th:href="@{/findPage?pageCode=1}"><strong>首页</strong></a>
-                    </li>
-                    <li>
-                        <a th:if="${page.pageCode gt 16}" th:href="'/findPage?pageCode='+${page.pageCode - 1}">&laquo;</a>
-                    </li>
-                    <!-- 显示页码 -->
-                    <li th:each="i:${#numbers.sequence(begin.begin,begin.end)}">
-                        <a th:class="${i ne page.pageCode}? '' : 'active'" th:href="@{'/findPage?pageCode='+${i}+ '&pageSize='+${page.pageSize}}" th:text="${i}"></a>
-                    </li>
-
-                    <li>
-                        <a th:if="${page.pageCode lt page.totalPage}" th:href="'/findPage?pageCode='+${page.pageCode + 1}">&raquo;</a>
-                    </li>
-                    <li>
-                        <a th:href="@{'/findPage?pageCode='+${page.totalPage}}"><strong>末页</strong></a>
-                    </li>
-                </ul>
-            </div>
+        <div  th:with="page=${@fenyeService.findByPage()} ,begin=${@fenyeService.begin()}"> <!--class="row"-->
+            <ul class="pagination"><!-- pagination-sm-->
+                <li>
+                    <a th:href="@{/findPage?pageCode=1}"><strong>首页</strong></a>
+                </li>
+                <li>
+                    <a th:if="${page.pageCode gt 16}" th:href="'/findPage?pageCode='+${page.pageCode - 1}">&laquo;</a>
+                </li>
+                <!-- 显示页码 -->
+                <li th:each="i:${#numbers.sequence(begin.begin,begin.end)}">
+                    <a th:class="${i ne page.pageCode}? '' : 'active'" th:href="@{'/findPage?pageCode='+${i}+ '&pageSize='+${page.pageSize}}" th:text="${i}"></a>
+                </li>
+                <!--<li>-->
+                    <!--<a th:if="${page.pageCode lt page.totalPage}" th:href="'/findPage?pageCode='+${page.pageCode + 1}">&raquo;</a>-->
+                <!--</li>-->
+                <li>
+                    <a th:href="@{'/findPage?pageCode='+${page.totalPage}}"><strong>末页</strong></a>
+                </li>
+            </ul>
         </div>
     </form>
 
 </div>
 
-<!--<div id="right">
-    &lt;!&ndash;"../#innewclu!#/#right#/pr-right##!"&ndash;&gt;
 
-</div>-->
+
 <div class="clear"></div>
-</div>
+
 <!--mobanhtml/copy!@#"-->
 <div id="copy"></div>
 
@@ -253,10 +298,9 @@
 <div class="top30"></div>
 <div class="banqbg" style="background: #3998FC;">
     <div class="banq">
-        <div class="banq1"><a href="/">网站首页</a>　/　<a href="company.html">关于我们</a>　/　<a
-                href="products.html">品牌分类</a>　/　<a href="dgweb-100849.html">荣誉证书</a>　/　<a
-                href="dgweb-103469.html">工程案例</a>　/　<a href="news.html">新闻动态</a>　/　<a href="feedback.html">在线留言</a>　/　<a
-                href="dgweb-100841.html">联系我们</a></div>
+        <div class="banq1"><a href="/">网站首页</a>　/　<a href="#">关于我们</a>　/　<a
+                href="#">品牌分类</a>　/　<a href="#">荣誉证书</a>　/　<a href="#">在线留言</a>　/　<a
+                href="#">联系我们</a></div>
     </div>
 </div>
 
@@ -264,22 +308,16 @@
 <div class="banq">
     <div class="banq2">
 
-        东莞市晟业电缆有限公司 版权所有 © Copyright 技术支持：<a href="http://copyright.114my.net/" target="_blank">东莞网站建设</a> 【<a
-            href="guanli.htm" target="_blank" rel="nofollow">后台管理</a>】<br/>
+        广州联晨电线有限公司 版权所有 【<a href="#" target="_blank" rel="nofollow">后台管理</a>】<br/>
 
-        销售商务：侯先生 13669835869 访问量：
-        <script language="javascript" src="http://login.114my.cn/app/webfwl.php?member=dgksdx"></script>
-        【<a href="sitemap.htm" target="_blank">BMAP</a>】【<a href="sitemap.xml" target="_blank">GMAP</a> 】<a
-            href="http://www.beian.miit.gov.cn" target="_blank">粤ICP备17010204号-1</a>
+        销售商务：林先生  15819652491
+        <a href="http://www.beian.miit.gov.cn" target="_blank">粤ICP备19161351号</a>
         <br/>
 
         *本站相关网页素材及相关资源均来源互联网，如有侵权请速告知，我们将会在24小时内删除*<br/>
 
     </div>
-
-
 </div>
-
 
 <div class="my-kefu">
     <ul id="my-kefu">
@@ -289,13 +327,15 @@
             <div class="my-kefu-main">
                 <div class="my-kefu-left">
                     <a class="online-contact-btn"
-                       href="http://wpa.qq.com/msgrd?v=3&uin=779807064&site=东莞市晟业电缆有限公司&menu=yes"
+                       href="tencent://Message/?Uin=751585801&amp;websiteName=q-zone.qq.com&amp;Menu=yes"
                        target="_blank"><i></i>
-                        <p>QQ咨询</p>
+                        <p>QQ咨询 751585801</p><!--http://wpa.qq.com/msgrd?v=3&uin=779807064&site=东莞市晟业电缆有限公司&menu=yes-->
                     </a>
                 </div>
             </div>
         </li>
+
+
 
 
         <li class="my-kefu-tel">
@@ -303,7 +343,7 @@
                 <div class="my-kefu-left"><i></i>
                     <p>服务热线</p>
                 </div>
-                <div class="my-kefu-tel-right">13669835869</div>
+                <div class="my-kefu-tel-right">15819652491</div>
             </div>
         </li>
 
@@ -313,8 +353,7 @@
                 <div class="my-kefu-left"><i></i>
                     <p>微信联系人</p>
                 </div>
-                <div class="my-kefu-tel2-right"><img style=" width:130px; height:130px;"
-                                                     src="img/20190901190716_1103942368.jpg" alt="微信联系人"/></div>
+                <div class="my-kefu-tel2-right"><img style=" width:130px; height:130px;" src="img/微信.png" th:src="@{img/微信.png}" alt="微信联系人"/></div>
             </div>
         </li>
 
@@ -331,8 +370,7 @@
 
     </ul>
 </div>
-<!--<script src="http://114my.cn.114.114my.net/fyh/lz/jquery-1.8.3.min.js"></script>-->
-<script th:src="@{http://114my.cn.114.114my.net/fyh/lz/jquery-1.8.3.min.js}"></script>
+
 
 <script>
     $(function () {
@@ -376,151 +414,5 @@
         });
     });
 </script>
-
-
-
-
-
-
-<!-- 百度统计代码 -->
-<!-- <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?116e597c465536854baede3152675c05";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script> -->
-
-
-<!--<div id="xmt-collection" style="z-index: 9999999;"><a href="javascript:void(0)" class="collect-img">采集</a>
-    <span class="collect-arrow"></span>
-
-    <ul class="collect-menu">
-        <li class="hide-collect">隐藏采集按钮</li>
-    </ul>
-</div>
-<div class="bdshare-slide-button-box bdshare-slide-style-l5" style="top: 151px; width: 0px; z-index: 99999; left: 0px;"
-     data-bd-bind="1570504239435">
-    <a href="http://www.dgsydl.com/products.html#" onclick="return false;" class="bdshare-slide-button"
-       style="right: -24px;"></a>
-    <div class="bdshare-slide-list-box" style="width: 0px; display: none;">
-        <div class="bdshare-slide-top">分享到</div>
-        <div class="bdshare-slide-list">
-            <ul class="bdshare-slide-list-ul" style="width: 116px;"></ul>
-        </div>
-        <div class="bdshare-slide-bottom" style="width: 116px;"><a href="http://www.dgsydl.com/products.html#"
-                                                                   onclick="return false;" class="slide-more"
-                                                                   data-cmd="more">更多...</a>
-        </div>
-    </div>
-</div>
-<iframe frameborder="0" id="bdSharePopup_selectshare1570504239442bg" class="bdselect_share_bg" style="display:none;"
-        src="saved_resource.html"></iframe>
-<div id="bdSharePopup_selectshare1570504239442box" style="display:none;" share-type="selectshare"
-     class="bdselect_share_box" data-bd-bind="1570504239441">
-    <div class="selectshare-mod-triangle">
-        <div class="triangle-border"></div>
-        <div class="triangle-inset"></div>
-    </div>
-    <div class="bdselect_share_head"><span>分享到</span><a href="http://www.baidu.com/s?wd=&tn=SE_hldp08010_vurs2xrp"
-                                                        class="bdselect_share_dialog_search" target="_blank"><i
-            class="bdselect_share_dialog_search_i"></i><span class="bdselect_share_dialog_search_span">百度一下</span></a>
-        <a class="bdselect_share_dialog_close"></a>
-    </div>
-    <div class="bdselect_share_content">
-        <ul class="bdselect_share_list bdshare-button-style0-16">
-            <div class="bdselect_share_partners"></div>
-            <a href="http://www.dgsydl.com/products.html#" class="bds_more" data-cmd="more"></a>
-        </ul>
-    </div>
-</div>-->
-<!-- <div id="bdimgshare_1570504239510" class="sr-bdimgshare sr-bdimgshare-list sr-bdimgshare-16 sr-bdimgshare-black" style="height:36px;line-height:26px;font-size:12px;width:autopx;display:none;" data-bd-bind="1570504239510">
-    <div class="bdimgshare-bg"></div>
-    <div class="bdimgshare-content bdsharebuttonbox bdshare-button-style0-16">
-        <label class="bdimgshare-lbl">分享到：</label>
-        <a href="http://www.dgsydl.com/products.html#" onclick="return false;" class="bds_qzone" data-cmd="qzone" hidefocus=""></a>
-        <a href="http://www.dgsydl.com/products.html#" onclick="return false;" class="bds_tsina" data-cmd="tsina" hidefocus=""></a>
-        <a href="http://www.dgsydl.com/products.html#" onclick="return false;" class="bds_tqq" data-cmd="tqq" hidefocus=""></a>
-        <a href="http://www.dgsydl.com/products.html#" onclick="return false;" class="bds_renren" data-cmd="renren" hidefocus=""></a>
-        <a href="http://www.dgsydl.com/products.html#" onclick="return false;" class="bds_weixin" data-cmd="weixin" hidefocus=""></a>
-        <a href="http://www.dgsydl.com/products.html#" onclick="return false;" class="bds_more" data-cmd="more" hidefocus=""></a>
-    </div>
-</div>
--->
-
-
-<!--<ins id="newBridge">
-    <ins class="nb-nodeboard-base nb-nodeboard-position-base nb-nodeboard-left-bottom nb-show" id="nb_nodeboard">
-        <ins class="nb-nodeboard-contain-base nb-nodeboard-contain">
-            <ins class="nb-nodeboard-top nb-nodeboard-top-0">
-                <ins class="nb-head-title">请您留言</ins>
-                <ins class="nb-nodeboard-close" id="nb_nodeboard_close" data-type="min"></ins>
-            </ins>
-
-            &lt;!&ndash; http://p.qiao.baidu.com/cps2//bookmanage/saveBook.action?userId=22565563   改为自己的 &ndash;&gt;
-            <form id="nb_nodeboard_form" autocomplete="off" class="nb-board-form" action="" method="post"
-                  accept-charset="utf-8">
-                <ins id="nb_nodeboard_set" class="nb-nodeboard-set">
-                    <ins class="nb-nodeboard-content"><textarea id="nb-nodeboard-set-content-js" name="content"
-                                                                data-ph="请在此输入留言内容，我们会尽快与您联系。（必填）"
-                                                                placeholder="请在此输入留言内容，我们会尽快与您联系。（必填）"
-                                                                class="nb-nodeboard-set-content nb-nodeboard-param"></textarea>
-                    </ins>
-                    <ins
-                            class="nb-nodeboard-name" style="z-index:4;">
-                        <ins class="nb-nodeboard-icon nodeName"></ins>
-                        <input id="nb_nodeboard_set_name" data-write="0" name="visitorName" maxlength="30"
-                               class="nb-nodeboard-input nb-nodeboard-param" type="text" data-ph="姓名" placeholder="姓名">
-                    </ins>
-                    <ins class="nb-nodeboard-name" id="nb_nodeboard_phone" style="z-index:3;">
-                        <ins class="nb-nodeboard-icon nodePhone"></ins>
-                        <input id="nb_nodeboard_set_phone" name="visitorPhone" maxlength="30"
-                               class="nb-nodeboard-input nb-nodeboard-param" data-write="1"
-                               type="text" data-ph="电话（必填）" placeholder="电话（必填）">
-                    </ins>
-                </ins>
-            </form>
-
-            <ins class="nb-nodeboard-success" id="nb_nodeboard_success">
-                <ins class="nb-success-box">
-                    <ins class="nb-success-icon"></ins>
-                    <ins class="nb-success-title" id="nb_node_messagetitle">感谢留言</ins>
-                    <ins class="nb-success-content" id="nb_node_messagecontent">我们会尽快与您联系</ins>
-                    <ins id="nb_nodeboard_return" class="nb-sucess-close">关闭</ins>
-                </ins>
-            </ins>
-            <ins class="nb-nodeboard-send" id="nb_node_contain">
-                <ins id="nb_nodeboard_send" class="nb-nodeboard-send-btn nb-nodeboard-send-btn-0">发送</ins>
-            </ins>
-        </ins>
-    </ins>
-    &lt;!&ndash; end &ndash;&gt;
-    &lt;!&ndash; target: iconIcon &ndash;&gt;
-    &lt;!&ndash; <ins class="nb-icon-wrap nb-icon-base icon-right-top nb-icon-skin-9 nb-icon-icon" id="nb_icon_wrap" style=";width:144px;"><ins class="nb-icon-inner-wrap" style="height:52px;width:144px;;"><ins class="nb-icon-bridge0 nb-icon-bridge-base" data-type="iconInvite"></ins></ins> &ndash;&gt;
-</ins>
-
-<ins class="nb-invite-wrap nb-invite-wrap-base nb-position-base nb-middle  " id="nb_invite_wrap"
-     style="width: 400px; display: block; margin-left: -200px; margin-top: -88px;">
-    <ins class="nb-invite-body nb-invite-skin-9" style="height:175px;;">
-        <ins class="nb-invite-tool nb-invite-tool-base" id="nb_invite_tool" style=""></ins>
-        <ins
-                class="nb-invite-text nb-invite-text-base">
-            <ins class="nb-invite-welcome nb-invite-welcome-base nb-show" id="nb_invite_welcome"><p style="color: #fff">
-                欢迎来到本网站，请问有什么可以帮您？</p></ins>
-        </ins>
-        <ins class="nb-invite-btn-base nb-invte-btns-9">
-            <ins class="nb-invite-cancel nb-invite-cancel-base" id="nb_invite_cancel">稍后再说</ins>
-            <ins
-                    class="nb-invite-ok nb-invite-ok-base" id="nb_invite_ok">现在咨询
-            </ins>
-        </ins>
-    </ins>
-</ins>
-
-</ins>
-<script src="saved_resource"></script>
-<div class="q-window-mask q-top-mask" style="display: none;"></div>-->
 </body>
 </html>

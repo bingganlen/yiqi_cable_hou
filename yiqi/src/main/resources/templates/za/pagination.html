@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!--<script src="http://114my.cn.114.114my.net/fyh/lz/jquery-1.8.3.min.js"></script>-->
+    <!--<script th:src="@{http://114my.cn.114.114my.net/fyh/lz/jquery-1.8.3.min.js}"></script>-->
+    <!--<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <!--<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">-->
+
+<!--    <style>
+        .pagination {
+            display: inline-block;
+            padding-left: 0;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        ol, ul {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        ul, li, span, p{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            border: 0px;
+        }
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        ul {
+            display: block;
+            list-style-type: disc;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 40px;
+        }
+        .pagination>li {
+            display: inline;
+        }
+        .pagination>li:first-child>a, .pagination>li:first-child>span {
+            margin-left: 0;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+        .pagination>li>a, .pagination>li>span {
+            position: relative;
+            float: left;
+            padding: 6px 12px;
+            margin-left: -1px;
+            line-height: 1.42857143;
+            color: #337ab7;
+            text-decoration: none;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+    </style>-->
+</head>
+<body>
+
+<div style="height: 100px; text-align: center;" th:fragment="page">
+    <div class="clear"></div>
+    <form class="listForm" method="post" action="/findPage">
+        <div  th:with="page=${@fenyeService.findByPage()} ,begin=${@fenyeService.begin()}"> <!--class="row"-->
+            <!--<div class="form-inline" th:with="page=${@fenyeService.findByPage()} ,begin=${@fenyeService.begin()}">-->
+            <!--<label style="font-size:11px;margin-top:22px;">-->
+            <!--<strong>共 <span th:text="${page.totalCount}"></span> 条记录，共<span th:text="${page.totalPage}"></span>页</strong>-->
+            <!--&nbsp;-->
+            <!--&nbsp;-->
+            <!--<strong>每页显示</strong>-->
+            <!--<input name="pageCode" th:value="${page.pageCode}" hidden="hidden"/>-->
+            <!--<select class="form-control" name="pageSize">-->
+            <!--<option value="8" th:selected="${page.pageSize eq 8}" selected >8</option>-->
+            <!--<option value="15" th:selected="${page.pageSize eq 16}" selected>16</option>-->
+            <!--<option value="20" th:selected="${page.pageSize eq 20}" selected>20</option>-->
+            <!--&lt;!&ndash;<option value="20" th:if="${page.pageSize eq 20}" th:selected="selected" selected>20</option>&ndash;&gt;-->
+            <!--</select>-->
+            <!--<strong>条</strong>-->
+            <!--&nbsp;-->
+            <!--&nbsp;-->
+            <!--<strong>到第</strong>&nbsp;<input type="text" size="3" id="page" name="pageCode" class="form-control input-sm"-->
+            <!--style="width:11%"/>&nbsp;<strong>页</strong>-->
+            <!--&nbsp;-->
+            <!--<button type="submit" class="btn btn-sm btn-info">GO!</button>-->
+            <!--</label>-->
+
+            <ul class="pagination"><!-- pagination-sm-->
+                <li>
+                    <a th:href="@{/findPage?pageCode=1}"><strong>首页</strong></a>
+                </li>
+                <li>
+                    <a th:if="${page.pageCode gt 16}" th:href="'/findPage?pageCode='+${page.pageCode - 1}">&laquo;</a>
+                </li>
+                <!-- 显示页码 -->
+                <li th:each="i:${#numbers.sequence(begin.begin,begin.end)}">
+                    <a th:class="${i ne page.pageCode}? '' : 'active'" th:href="@{'/findPage?pageCode='+${i}+ '&pageSize='+${page.pageSize}}" th:text="${i}"></a>
+                </li>
+
+                <li>
+                    <a th:if="${page.pageCode lt page.totalPage}" th:href="'/findPage?pageCode='+${page.pageCode + 1}">&raquo;</a>
+                </li>
+                <li>
+                    <a th:href="@{'/findPage?pageCode='+${page.totalPage}}"><strong>末页</strong></a>
+                </li>
+            </ul>
+        </div>
+    </form>
+
+</div>
+</body>
+</html>

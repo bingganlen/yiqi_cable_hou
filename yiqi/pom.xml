@@ -20,6 +20,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+
     </properties>
 
     <dependencies>
@@ -79,7 +80,7 @@
             <version>3.8.1</version>
         </dependency>
 
-        <!-- pagehelper分页插件依赖  原来的版本  pagehelper-spring-boot-starter1.2.5 -->
+        <!-- pagehelper分页插件依赖  原来的版本  pagehelper-spring-boot-starter1.2.5     现在报错  java.lang.RuntimeException: 在系统中发现了多个分页插件，请检查系统配置!-->
         <!--<dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-starter</artifactId>
@@ -91,16 +92,17 @@
             <artifactId>pagehelper</artifactId>
             <version>5.1.2</version>
         </dependency>
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-autoconfigure</artifactId>
-            <version>1.2.3</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-starter</artifactId>
-            <version>1.2.3</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.github.pagehelper</groupId>-->
+<!--            <artifactId>pagehelper-spring-boot-autoconfigure</artifactId>-->
+<!--            <version>1.2.3</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.github.pagehelper</groupId>-->
+<!--            <artifactId>pagehelper-spring-boot-starter</artifactId>-->
+<!--            <version>1.2.3</version>-->
+<!--        </dependency>-->
+
 
 
         <dependency>
@@ -136,6 +138,14 @@
         </dependency>
         <!--部署成war包时开启↑↑↑↑-->
 
+
+
+        <!-- 尝试图片压缩的依赖 -->
+        <dependency>
+            <groupId>net.coobird</groupId>
+            <artifactId>thumbnailator</artifactId>
+            <version>0.4.8</version>
+        </dependency>
 
     </dependencies>
 

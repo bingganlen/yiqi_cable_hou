@@ -2,7 +2,9 @@ package com.junhao.yiqi.controller;
 
 
 import com.alibaba.fastjson.JSON;
+import com.junhao.yiqi.dao.otherImgMapper;
 import com.junhao.yiqi.entity.ImgEntity;
+import com.junhao.yiqi.entity.otherImgEntity;
 import com.junhao.yiqi.entity.productEntity;
 import com.junhao.yiqi.jpa.ImgJpa;
 import com.junhao.yiqi.jpa.productJpa;
@@ -32,11 +34,20 @@ public class FileController {
     private ImgJpa imgJpa;
     @Autowired
     private productJpa productJpa;
+    @Autowired
+    private otherImgMapper oth;
 
     //上传商品的页面  图片
-    @RequestMapping("/upload")
+    @RequestMapping("/Toupload")
     public String upload(){
         return "product/addProduct";
+    }
+
+    @RequestMapping("/tosetGoods")
+    public String goods(Integer id,Model model){
+        model.addAttribute("goods",productJpa.selectproduct(id));
+        model.addAttribute("id",id);
+        return "product/setProduct";
     }
 
     /**\
@@ -60,8 +71,8 @@ public class FileController {
         }
         String fileName = file.getOriginalFilename();
         //上传的文件名加上时间戳后缀   DateTimeUtil.dateNumToStr();
-        String newFileName = fileName.substring(0,fileName.lastIndexOf(".")) + " " + DateTimeUtil.dateNumToStr() + fileName.substring(fileName.lastIndexOf("."));
-        File fileDir = UploadUtils.getImgDirFile();
+        String newFileName = fileName.substring(0,fileName.lastIndexOf("."))  + DateTimeUtil.dateNumToStr() + fileName.substring(fileName.lastIndexOf("."));
+        File fileDir = UploadUtils.getImgDirFile(request);
         System.out.println(fileDir.getAbsolutePath());
         File dest = new File(fileDir.getAbsolutePath() + File.separator + newFileName);;
 
@@ -128,8 +139,8 @@ public class FileController {
         }
         String fileName = file.getOriginalFilename();
         //上传的文件名加上时间戳后缀   DateTimeUtil.dateNumToStr();
-        String newFileName = fileName.substring(0,fileName.lastIndexOf(".")) + " " + DateTimeUtil.dateNumToStr() + fileName.substring(fileName.lastIndexOf("."));
-        File fileDir = UploadUtils.getImgDirFile();
+        String newFileName = fileName.substring(0,fileName.lastIndexOf("."))  + DateTimeUtil.dateNumToStr() + fileName.substring(fileName.lastIndexOf("."));
+        File fileDir = UploadUtils.getImgDirFile(request);
         System.out.println(fileDir.getAbsolutePath());
         File dest = new File(fileDir.getAbsolutePath() + File.separator + newFileName);;
 
@@ -171,6 +182,54 @@ public class FileController {
 
     }
 
+
+//    // todo  TO上传附图的位置
+//    // 下拉框选择品牌名和 商品名后   显示品牌的主图，主图不可修改   下面就上传多个附图
+//    @RequestMapping("/TOImgfu")
+//    public String TOuploadImgfu(){
+//
+//        return "";
+//    }
+
+
+    @RequestMapping("/uploadImgFu")
+    @ResponseBody
+    public String TOuploadImgfu(@RequestParam("file") MultipartFile file,String brand,String productName,
+                         HttpServletRequest request) throws Exception {
+        if (file.isEmpty()) {
+            return "上传失败，请选择文件";
+        }
+        String fileName = file.getOriginalFilename();
+        //上传的文件名加上时间戳后缀   DateTimeUtil.dateNumToStr();
+        String newFileName = fileName.substring(0,fileName.lastIndexOf("."))  + DateTimeUtil.dateNumToStr() + fileName.substring(fileName.lastIndexOf("."));
+        File fileDir = UploadUtils.getImgDirFile(request);
+        System.out.println(fileDir.getAbsolutePath());
+        File dest = new File(fileDir.getAbsolutePath() + File.separator + newFileName);;
+
+        BufferedImage bufferedImage = ImageIO.read(file.getInputStream());
+        String height = String.valueOf(bufferedImage.getWidth());
+        String width = String.valueOf(bufferedImage.getHeight());//图片高度 像素
+        String s = String.valueOf(file.getSize());//System.out.println("文件大小(MultipartFile)： " + file.getSize()   + "    ，另一个方法(File)：" + dest.length());
+
+        try {
+            file.transferTo(dest);//绝对路径
+            otherImgEntity otherImgEntity = new otherImgEntity();
+            otherImgEntity.setBrandName(brand);
+            otherImgEntity.setProductName(productName);
+            otherImgEntity.setMd5(DigestUtils.md5Hex(new FileInputStream(dest)));
+            otherImgEntity.setHeight(width);
+            otherImgEntity.setWidth(width);
+            otherImgEntity.setSize(s);
+            otherImgEntity.setProductImage("/upload/"+newFileName);
+            otherImgEntity.setCreatetime(new Date());
+            oth.insert(otherImgEntity);
+
+            return JSON.toJSONString("上传成功！");
+        } catch (IOException e) {
+            return JSON.toJSONString("上传失败！");
+        }
+
+    }
 
 
 

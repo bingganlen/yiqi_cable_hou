@@ -59,6 +59,21 @@ public class pageHelperController {
         return "index";
     }
 
+
+    //一开始默认就访问
+    @Controller
+    @RequestMapping("/")
+    public class index {
+        @RequestMapping(value = "/", method = RequestMethod.GET)
+        public String index(ModelMap model,productEntity productEntity){
+            int pageCode=1;
+            int pageSize=16;
+            model.addAttribute("pages",fenyeService.findByPage(productEntity,pageCode, pageSize));
+            return "index";
+        }
+    }
+
+
 }
 
 

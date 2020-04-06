@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junhao.yiqi.dao.productMapper">
+  <resultMap id="BaseResultMap" type="com.junhao.yiqi.entity.productEntity">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="brandName" jdbcType="VARCHAR" property="brandName" />
+    <result column="productName" jdbcType="VARCHAR" property="productName" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="detail" jdbcType="VARCHAR" property="detail" />
+    <result column="productImageId" jdbcType="INTEGER" property="productImageId" />
+    <result column="productImage" jdbcType="VARCHAR" property="productImage" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, brandName, productName, content, detail, productImageId,productImage,createtime
+  </sql>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from product
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <select id="allproductname" parameterType="java.lang.String" resultType="java.lang.String">
+    select productName
+    from product
+    where brandName = #{brand}
+  </select>
+
+  <!-- 这个map目前只为了 分页查询 -->
+  <select id="gettp" parameterType="com.junhao.yiqi.entity.productEntity" resultMap="BaseResultMap">
+    SELECT <include refid="Base_Column_List" /> FROM product
+    <where>
+      <if test="brandName != null">
+        and brandName LIKE CONCAT('%', #{brandName}, '%')
+      </if>
+      <if test="productName != null">
+        AND productName LIKE CONCAT('%', #{productName}, '%')
+      </if>
+      <if test="createtime!=null and createtime!='' ">
+        and createtime &gt;= #{createtime}
+      </if>
+    </where>
+    order by createtime DESC
+  </select>
+
+  <!-- 修改除图片外的内容 -->
+  <update id="updateByPrimaryKey" parameterType="com.junhao.yiqi.entity.productEntity">
+    update product
+    set brandName = #{brandName,jdbcType=VARCHAR},
+         productName = #{productName,jdbcType=VARCHAR},
+         content = #{content,jdbcType=VARCHAR},
+         detail = #{detail,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="checkbrand" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select COUNT(brandName) FROM product
+    where brandName = #{brand}
+  </select>
+
+  <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from dervice_status_his
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.megain.junhao.pojo.Dervice_status_his">
+    insert into dervice_status_his (id, device_id, power,
+      record_time)
+    values (#{id,jdbcType=INTEGER}, #{deviceId,jdbcType=INTEGER}, #{power,jdbcType=REAL},
+      #{recordTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.megain.junhao.pojo.Dervice_status_his">
+    insert into dervice_status_his
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="deviceId != null">
+        device_id,
+      </if>
+      <if test="power != null">
+        power,
+      </if>
+      <if test="recordTime != null">
+        record_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="deviceId != null">
+        #{deviceId,jdbcType=INTEGER},
+      </if>
+      <if test="power != null">
+        #{power,jdbcType=REAL},
+      </if>
+      <if test="recordTime != null">
+        #{recordTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.megain.junhao.pojo.Dervice_status_his">
+    update dervice_status_his
+    <set>
+      <if test="deviceId != null">
+        device_id = #{deviceId,jdbcType=INTEGER},
+      </if>
+      <if test="power != null">
+        power = #{power,jdbcType=REAL},
+      </if>
+      <if test="recordTime != null">
+        record_time = #{recordTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  -->
+</mapper>

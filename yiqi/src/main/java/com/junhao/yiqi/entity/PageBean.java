@@ -73,4 +73,5 @@ public class PageBean<T> implements Serializable {
     public void setBeanList(List<T> beanList) {
         this.beanList = beanList;
     }
+
 }

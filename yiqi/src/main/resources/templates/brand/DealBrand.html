@@ -7,11 +7,93 @@
     <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
     <script th:src="@{js/bootstrap.min.js}"></script>
 
+
+    <link th:src="@{/cssjs/magiczoomplus.css}" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="stylesheet" th:href="@{/cssjs/indexcss.css}">
+    <link rel="stylesheet" th:href="@{/cssjs/headcss.css}">
+    <link rel="stylesheet" th:href="@{/cssjs/right_QQ.css}">
+    <link th:href="@{/cssjs/allbag.css}" rel="stylesheet" type="text/css"/>
+
 </head>
 <body>
+<!--logo-->
+<div class="logo">
+    <div class="logo0 fl">
+        <div class="logo1"><a href="/">广州<span>联晨电子</span>科技有限公司</a></div>
+        <div class="logo11">
+            | 专业生产和销售各种型号电线电缆五金电器 |
+        </div>
+    </div>
+    <div class="logo2 fr"><img th:src="@{/img/20190924113719_1905694865.jpg}" alt="全国服务热线"/></div>
+
+</div>
+
+<!--导航-->
+<div class="nav_bg">
+    <div class="nav box">
+
+        <ul class="menu">
+            <li class="/"><a href="http://gzlcdx.com/">网站首页</a></li>
+            <li><a id="aa1" href="#">关于我们</a></li>
+            <li><a id="aa2" href="#">品牌分类</a>
+                <ul th:with="brandsa=${@fenyeService.allBrand()}">
+                    <li th:each="item:${brandsa}">
+                        <a th:href="@{'/findPage?brandName='+ ${item}}"
+                           th:title="${item}" class="ba" th:text="${item}">
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li><a id="aa3" href="#">荣誉证书</a></li>
+            <!--<li><a id="aa4" href="#">工程案例</a></li>-->
+            <!--<li><a id="aa5" href="#">新闻动态</a></li>-->
+            <li><a id="aa6" href="#">在线留言</a></li>
+            <li><a id="aa7" href="/toConnectUs">联系我们</a></li>
+
+        </ul>
+    </div>
+
+</div>
+<!--此段JS必须放置在导航代码以下-->
+<script type="text/javascript">
+    // JavaScript Document
+    var curUrl = location.pathname.substr(1);
+    if (curUrl.indexOf("company") > -1) {
+        document.getElementById('aa1').className = " a_nav";
+    }
+    ;
+    if (curUrl.indexOf("products") > -1) {
+        document.getElementById('aa2').className = " a_nav";
+    }
+    ;
+    if (curUrl.indexOf("100849") > -1) {
+        document.getElementById('aa3').className = " a_nav";
+    }
+    ;
+    if (curUrl.indexOf("103469") > -1) {
+        document.getElementById('aa4').className = " a_nav";
+    }
+    ;
+    if (curUrl.indexOf("news") > -1) {
+        document.getElementById('aa5').className = " a_nav";
+    }
+    ;
+    if (curUrl.indexOf("feedback") > -1) {
+        document.getElementById('aa6').className = " a_nav";
+    }
+    ;
+    if (curUrl.indexOf("100841") > -1) {
+        document.getElementById('aa7').className = " a_nav";
+    }
+    ;
+
+
+</script>
+
+
 
 <div class="container">
-    <a class="btn btn-lg btn-primary" id="addbrand">添加</a>
+    <a class="btn btn-lg btn-primary" id="addbrand">添加品牌</a>
     <table class="table">
         <caption>上下文表格布局</caption>
         <thead>
@@ -24,7 +106,6 @@
         <tbody>
         <!--class="active"-->
 
-
         <tr th:each="item:${list}">
             <td th:text="${item.id}"></td>
             <td>[[${item.brand}]]</td>
@@ -36,14 +117,11 @@
                 <!--<button type="submit" class="btn btn-sm btn-danger deleteBtn">删除</button>-->
             </td>
         </tr>
-
-
-
-
     </table>
 
 
 
+<!-- 模态框-->
     <div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" style="width: 700px;">
             <div class="modal-content">
@@ -66,63 +144,99 @@
                             </button>
                         </form>
                     </div>
-
                 </div>
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                     </button>
-
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal -->
     </div>
 
-
-        <script type="text/javascript">
-            //模态框居中问题 start
-            /*function centerModals() {
-                $('.modal').each(function(i) {
-                    var $clone = $(this).clone().css('display', 'block').appendTo('body');
-                    var top = Math.round(($clone.height() - $clone.find('.modal-content').height()) / 2);
-                    top = top > 50 ? top : 0;
-                    $clone.remove();
-                    $(this).find('.modal-content').css("margin-top", top - 50);
-                });
-            }
-            // 在模态框出现的时候调用垂直居中方法
-            $('.modal').on('show.bs.modal', centerModals);
-            // 在窗口大小改变的时候调用垂直居中方法
-            $(window).on('resize', centerModals);
-            //模态框居中问题end
+    <script type="text/javascript">
+        //模态框居中问题 start
+        /*function centerModals() {
+            $('.modal').each(function(i) {
+                var $clone = $(this).clone().css('display', 'block').appendTo('body');
+                var top = Math.round(($clone.height() - $clone.find('.modal-content').height()) / 2);
+                top = top > 50 ? top : 0;
+                $clone.remove();
+                $(this).find('.modal-content').css("margin-top", top - 50);
+            });
+        }
+        // 在模态框出现的时候调用垂直居中方法
+        $('.modal').on('show.bs.modal', centerModals);
+        // 在窗口大小改变的时候调用垂直居中方法
+        $(window).on('resize', centerModals);
+        //模态框居中问题end
 */
 
-            //$("#ModalSet").modal('show');
+        //$("#ModalSet").modal('show');
 
-            $("#addbrand").click(function(){
-                $("#ModalAdd").modal('show');
+        $("#addbrand").click(function(){
+            $("#ModalAdd").modal('show');
+        });
+
+        //onclick='seaf(${item.id})'
+        function seaf(n){
+            alert(n);
+            $.ajax({
+                type : "POST",
+                url  : "/brand/manageBrand",
+                data : {
+                    "id" : n
+                },
+                dataType: "json",
+                success : function(result) {
+                    document.getElementById("bvalue").innerHTML = result;
+                    //document.getElementById("bvalue").innerHTML = result;
+                    $("#ModalSet").modal('show');
+                }
             });
 
-            //onclick='seaf(${item.id})'
-            function seaf(n){
-                alert(n);
-                $.ajax({
-                    type : "POST",
-                    url  : "/brand/manageBrand",
-                    data : {
-                        "id" : n
-                    },
-                    dataType: "json",
-                    success : function(result) {
-                        document.getElementById("bvalue").innerHTML = result;
-                        //document.getElementById("bvalue").innerHTML = result;
-                        $("#ModalSet").modal('show');
-                    }
-                });
-
-            }
-
-        </script>
+        }
+    </script>
 </div>
+
+
+<!--todo 查看商品的列表  编号  商品名   品牌名  主图路径  创建时间 -->
+<a class="btn btn-lg btn-primary" id="addGoods" href="/Toupload">添加商品</a>
+<table class="table" style="width: 100%;">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>商品名</th>
+        <th>品牌名</th>
+        <th>主图路径</th>
+        <th>创建时间</th>
+        <th>操作</th></tr>
+    </thead>
+    <tbody>
+    <!--class="active"-->
+
+    <tr th:each="item:${goods}">
+        <td th:text="${item.id}"></td>
+        <td>[[${item.productName}]]</td>
+        <td>[[${item.brandName}]]</td>
+        <td>[[${item.productImage}]]</td>
+        <td>[[${item.createtime}]]</td>
+        <!--<td th:text="${#dates.format(item.createtime,'yyyy-MM-dd HH:mm:ss')}"></td>  这应该是时间戳字符串转化为时间  -->
+        <td>
+            <a class="btn btn-sm btn-primary"  th:href="@{/tosetGoods?id=}+${item.id}">编辑  TODO 去编辑页面</a>
+            <a class="btn btn-sm btn-danger deleteBtn" th:href="@{/goods/del?id=}+${item.id}">删除</a>
+
+        </td>
+    </tr>
+</table>
+
+<br>
+<hr>
+<div>
+    <p>去上传商品的附图--   一个一个传   目前传2张图片有bug</p>
+    <a class="btn btn-lg btn-primary" href="/toaddFuImg">去上传附图的界面</a>
+</div>
+
+<br>
 </body>
 </html>

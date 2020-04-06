@@ -1,3 +1,66 @@
+###错误
+    Caused by: org.apache.ibatis.exceptions.PersistenceException: 
+     Error querying database.  Cause: java.lang.RuntimeException: 在系统中发现了多个分页插件，请检查系统配置!
+     Cause: java.lang.RuntimeException: 在系统中发现了多个分页插件，请检查系统配置!
+     
+ ####下面的保留一个就够了   pagehelper-spring-boot-starter这东西与<artifactId>pagehelper</artifactId>重复
+     <!-- pagehelper分页插件依赖  原来的版本  pagehelper-spring-boot-starter1.2.5     现在报错  java.lang.RuntimeException: 在系统中发现了多个分页插件，请检查系统配置!-->
+             <!--<dependency>
+                 <groupId>com.github.pagehelper</groupId>
+                 <artifactId>pagehelper-spring-boot-starter</artifactId>
+                 <version>1.2.5</version>
+             </dependency>-->
+             <!--导入pagehelper相关依赖   现在的版本 -->
+             <dependency>
+                 <groupId>com.github.pagehelper</groupId>
+                 <artifactId>pagehelper</artifactId>
+                 <version>5.1.2</version>
+             </dependency>
+     <!--        <dependency>-->
+     <!--            <groupId>com.github.pagehelper</groupId>-->
+     <!--            <artifactId>pagehelper-spring-boot-autoconfigure</artifactId>-->
+     <!--            <version>1.2.3</version>-->
+     <!--        </dependency>-->
+     <!--        <dependency>-->
+     <!--            <groupId>com.github.pagehelper</groupId>-->
+     <!--            <artifactId>pagehelper-spring-boot-starter</artifactId>-->
+     <!--            <version>1.2.3</version>-->
+     <!--        </dependency>-->
+     
+     
+     
+     
+
+
+        
+  ##部署错误
+        
+    E325: ATTENTION
+    Found a swap file by the name "conf/.server.xml.swp"
+              owned by: root   dated: Wed Jan  1 22:22:30 2020
+             file name: /junhao/server/tomcat9.0/conf/server.xml
+              modified: no
+             user name: root   host name: izwz9iw2bqogma2tkikyi1z
+            process ID: 28737 (still running)
+    While opening file "conf/server.xml"
+                 dated: Wed Jan  1 19:57:12 2020
+    
+    (1) Another program may be editing the same file.  If this is the case,
+        be careful not to end up with two different instances of the same
+        file when making changes.  Quit, or continue with caution.
+    (2) An edit session for this file crashed.
+        If this is the case, use ":recover" or "vim -r conf/server.xml"
+        to recover the changes (see ":help recovery").
+        If you did this already, delete the swap file "conf/.server.xml.swp"
+        to avoid this message.
+    
+    Swap file "conf/.server.xml.swp" already exists!
+    [O]pen Read-Only, (E)dit anyway, (R)ecover, (Q)uit, (A)bort:
+
+解决 ： 多出来的.server.xml.swp删掉
+
+
+
 一、打成war包发布到tomcat（这步已经完成，自行跳过）
 1. pom.xml
 去掉内嵌tomcat

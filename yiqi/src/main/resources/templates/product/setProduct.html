@@ -28,44 +28,61 @@
                     &times;
                 </button>
                 <h4 class="modal-title" id="myModalLabel">
-                    <span id="title">商品修改   <span style="color:red;font-family: 华文新魏;">没错镇的是修改</span></span>
+                    <span id="title">商品修改   <span style="color:red;font-family: 华文新魏;">没错真的是修改</span></span>
                 </h4>
             </div>
 
             <div class="modal-body" >
-                <input id="brandId" type="hidden" value="${id}" />  <!-- 点击商品修改需要ID  不然就是 insert 而不是修改 -->
+                <input id="brandId" type="hidden" th:value="${id}"  />  <!-- 点击商品修改需要ID  不然就是 insert 而不是修改 -->
                 <!--<input id="brandtext" type="hidden" value="${id}" />-->
                 <div class="form-group">
                     <h5>选择品牌名</h5>
                     <select class="form-control" name="brand" id="brand">
-
+                        <option th:value="${goods.getBrandName()}" th:text="${goods.getBrandName()}" > </option>
                     </select>
                     <!--<input type="text" name="brand" id="brand" class="form-control" placeholder="请输入品牌名">-->
 
                 </div>
                 <div class="form-group">
-                    <input type="text" name="productName" id="productName" class="form-control" placeholder="请输入产品名">
+                    <input type="text" name="productName" id="productName" class="form-control" placeholder="请输入产品名" th:value="${goods.getProductName()}">
                 </div>
+                <div class="form-group">
+                    <img th:src="${goods.getProductImage()}" width="400" height="300">
+                </div>
+
                 <div class="form-group">
                     <!--<input type="text" name="content" class="form-control" placeholder="参数">-->
                     <h3>商品参数</h3>
-                    <textarea class="form-control" name="content" id="content" rows="16" style="min-width: 90%"></textarea>
+                    <textarea class="form-control" name="content" id="content" rows="16" style="min-width: 90%" th:text="${goods.getContent()}">
+
+                    </textarea>
                 </div>
                 <div class="form-group">
                     <h3>商品详情</h3>
                     <!--<input type="text" name="detail" class="form-control" placeholder="商品详情">-->
-                    <textarea class="form-control" name="detail" id="detail" rows="16" style="min-width: 90%"></textarea>
+                    <textarea class="form-control" name="detail" id="detail" rows="16" style="min-width: 90%" th:text="${goods.getDetail()}">
+
+                    </textarea>
                 </div>
 
-                <div class="form-group">
+                <br>
+                <button class="btn btn-lg btn-primary" id="uploadOther" onclick="toset()"> 确定更改</button>
+
+                <br>
+                   <hr>
+                <br>
+                <span>是否需要更改 【图片】;  如果需要请点击右边按钮</span>  <button class="btn btn-lg btn-primary" id="readyToUpdateImage">更改图片按钮</button><span>点击显示或隐藏</span>
+                <br>
+<div id="doyou" style="display: none;">
+               <div class="form-group">
                     <form enctype="multipart/form-data">
                         <div class="form-group center-block" style="width: 600px;" >
-                            <input id="file" type="file" name="file"  class="file" data-browse-on-zone-click="true">
+                            <input id="file" type="file" name="fileset"  class="file" data-browse-on-zone-click="true">
                         </div>
                     </form>
                 </div>
 
-                <div class="modal-footer">
+                <div class="modal-footer" >
                     <!--<button type="button" class="btn btn-default" data-dismiss="modal">关闭
                     </button>-->
                     <button type="submit" id="dosubmit" class="btn btn-primary" onclick="return CheckPost();">
@@ -75,11 +92,25 @@
                     <span id="tip"> </span>
                 </div>
             </div><!-- /.modal-content -->
+ </div>
         </div>
     </div>
 
     <script src="js/initFileInput.js"></script>
     <script>
+        var statis = 0;
+        $("#readyToUpdateImage").click(function(){
+            if (statis == 0){
+                $("#doyou").show();
+                $("#uploadOther").hide();
+                statis = 1;
+            } else {
+                $("#doyou").hide();
+                $("#uploadOther").show();
+                statis = 0;
+            }
+
+        });
 
         /* 品牌下拉框 */
         $.ajax({
@@ -98,10 +129,40 @@
             }
         });
 
+        //确认修改
+        function toset(){
+            var id = $("#brandId").val();
+            var brandText = $("#brand").val();
+            var productName = $("#productName").val();
+            var content = $("#content").val();
+            var detail = $("#detail").val();
+            $.ajax({
+                type: "POST",
+                url: "/goods/setoutImg",
+                data:{
+                    "id" : id,
+                    "brandName" : brandText,
+                    "productName" : productName,
+                    "content" : content,
+                    "detail" : detail
+                },
+                //dataType: "json", //返回数据形式为json   没注释掉出现error？？ 有好心人帮我查一下吗
+                success: function (result) {
+                    alert("修改成功");
+                },
+                error: function () {
+                    alert("what   还真的报错啊");
+                }
+            });
+
+        }
+
+
+        //以下是修改图片
         //初始化fileinput
         SetinitFileInput("file","/uploadset");  ///uploadImg   把后台的这个提交换成修改  解决
 
-        function CheckPost() {
+        function CheckPost() { /* 400 bad request，请求报文存在语法错误   举例：  客户端：@#！3&*      服务器：你说的是什么，完全不知道你要表达什么意思，我没法给你服务 */
             var brandText = $("#brand").val();
             var productName = $("#productName").val();
             var content = $("#content").val();

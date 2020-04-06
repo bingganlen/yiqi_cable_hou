@@ -22,7 +22,7 @@ div,ul,li,span,p,img,h1,h2,h3,h4,h5,h6,dl,dt,dd{margin:0px; padding:0px; list-st
 
 /*LOGO*/
 .logo0{}
-.logo1{ background:url(../img/20170227204049_64141515.jpg) center bottom no-repeat; width:420px; margin-top:38px; line-height:43px; font-size:36px; font-weight:bold; color:#222222; padding-bottom:8px;}
+.logo1{  /*width:450px;*/ margin-top:38px; line-height:43px; font-size:36px; font-weight:bold; color:#222222; padding-bottom:8px;}
 .logo1 span{ color:#c80919;}
 .logo1 a{  font-size:36px; font-weight:bold; color:#222222;}
 .logo1 a:hover{ text-decoration:none; color:#222222;}

@@ -1,0 +1,165 @@
+2020-04-03 21:05:30.875 [main] INFO  com.junhao.yiqi.YiqiApplication - Starting YiqiApplication on DESKTOP-JQ52JD4 with PID 28644 (D:\yiqi_cable_hou-master\yiqi\target\classes started by huangjunhao in D:\yiqi_cable_hou-master\yiqi)
+2020-04-03 21:05:30.878 [main] INFO  com.junhao.yiqi.YiqiApplication - No active profile set, falling back to default profiles: default
+2020-04-03 21:05:31.401 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-03 21:05:31.452 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45ms. Found 4 repository interfaces.
+2020-04-03 21:05:31.664 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$390f7e7e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-03 21:05:31.886 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-04-03 21:05:31.897 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2020-04-03 21:05:31.903 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-03 21:05:31.903 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2020-04-03 21:05:31.908 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.19] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2020-04-03 21:05:31.909 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.19] using APR version [1.6.5].
+2020-04-03 21:05:31.909 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-03 21:05:31.909 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-03 21:05:31.912 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-04-03 21:05:32.060 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-03 21:05:32.063 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-03 21:05:32.063 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1156 ms
+2020-04-03 21:05:32.268 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-03 21:05:32.863 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-04-03 21:05:32.917 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.9.Final}
+2020-04-03 21:05:32.917 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2020-04-03 21:05:33.032 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-04-03 21:05:33.139 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-04-03 21:05:33.550 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-03 21:05:35.349 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-03 21:05:35.374 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-03 21:05:35.419 [main] WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-04-03 21:05:35.440 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-03 21:05:35.509 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2020-04-03 21:05:35.532 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-04-03 21:05:35.534 [main] INFO  com.junhao.yiqi.YiqiApplication - Started YiqiApplication in 4.99 seconds (JVM running for 5.953)
+2020-04-03 21:06:39.502 [main] INFO  com.junhao.yiqi.YiqiApplication - Starting YiqiApplication on DESKTOP-JQ52JD4 with PID 20976 (D:\yiqi_cable_hou-master\yiqi\target\classes started by huangjunhao in D:\yiqi_cable_hou-master\yiqi)
+2020-04-03 21:06:39.504 [main] INFO  com.junhao.yiqi.YiqiApplication - No active profile set, falling back to default profiles: default
+2020-04-03 21:06:39.937 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-03 21:06:39.980 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 38ms. Found 4 repository interfaces.
+2020-04-03 21:06:40.193 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3474c06e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-03 21:06:40.390 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-04-03 21:06:40.398 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2020-04-03 21:06:40.404 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-03 21:06:40.404 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2020-04-03 21:06:40.408 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.19] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2020-04-03 21:06:40.408 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.19] using APR version [1.6.5].
+2020-04-03 21:06:40.408 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-03 21:06:40.408 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-03 21:06:40.411 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-04-03 21:06:40.554 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-03 21:06:40.556 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-03 21:06:40.556 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1028 ms
+2020-04-03 21:06:40.744 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-03 21:06:41.343 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-04-03 21:06:41.379 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.9.Final}
+2020-04-03 21:06:41.380 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2020-04-03 21:06:41.453 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-04-03 21:06:41.533 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-04-03 21:06:41.895 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-03 21:06:42.333 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-03 21:06:42.354 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-03 21:06:42.398 [main] WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-04-03 21:06:42.414 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-03 21:06:42.479 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2020-04-03 21:06:42.502 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-04-03 21:06:42.503 [main] INFO  com.junhao.yiqi.YiqiApplication - Started YiqiApplication in 3.256 seconds (JVM running for 4.315)
+2020-04-03 21:09:28.297 [main] INFO  com.junhao.yiqi.YiqiApplication - Starting YiqiApplication on DESKTOP-JQ52JD4 with PID 20756 (D:\yiqi_cable_hou-master\yiqi\target\classes started by huangjunhao in D:\yiqi_cable_hou-master\yiqi)
+2020-04-03 21:09:28.299 [main] INFO  com.junhao.yiqi.YiqiApplication - No active profile set, falling back to default profiles: default
+2020-04-03 21:09:28.736 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-03 21:09:28.779 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 38ms. Found 4 repository interfaces.
+2020-04-03 21:09:28.979 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b8b318ac] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-03 21:09:29.176 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-04-03 21:09:29.185 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2020-04-03 21:09:29.190 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-03 21:09:29.190 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2020-04-03 21:09:29.194 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.19] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2020-04-03 21:09:29.194 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.19] using APR version [1.6.5].
+2020-04-03 21:09:29.195 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-03 21:09:29.195 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-03 21:09:29.197 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-04-03 21:09:29.339 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-03 21:09:29.341 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-03 21:09:29.341 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1003 ms
+2020-04-03 21:09:29.518 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-03 21:09:30.071 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-04-03 21:09:30.106 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.9.Final}
+2020-04-03 21:09:30.107 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2020-04-03 21:09:30.179 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-04-03 21:09:30.259 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-04-03 21:09:30.610 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-03 21:09:31.019 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-03 21:09:31.042 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-03 21:09:31.098 [main] WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-04-03 21:09:31.115 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-03 21:09:31.180 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2020-04-03 21:09:31.201 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-04-03 21:09:31.202 [main] INFO  com.junhao.yiqi.YiqiApplication - Started YiqiApplication in 3.163 seconds (JVM running for 4.514)
+2020-04-03 21:12:44.619 [main] INFO  com.junhao.yiqi.YiqiApplication - Starting YiqiApplication on DESKTOP-JQ52JD4 with PID 12180 (D:\yiqi_cable_hou-master\yiqi\target\classes started by huangjunhao in D:\yiqi_cable_hou-master\yiqi)
+2020-04-03 21:12:44.621 [main] INFO  com.junhao.yiqi.YiqiApplication - No active profile set, falling back to default profiles: default
+2020-04-03 21:12:45.063 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-03 21:12:45.105 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 38ms. Found 4 repository interfaces.
+2020-04-03 21:12:45.310 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c61e8f0c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-03 21:12:45.507 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-04-03 21:12:45.516 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2020-04-03 21:12:45.521 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-03 21:12:45.521 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2020-04-03 21:12:45.526 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.19] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2020-04-03 21:12:45.526 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.19] using APR version [1.6.5].
+2020-04-03 21:12:45.526 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-03 21:12:45.526 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-03 21:12:45.528 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-04-03 21:12:45.677 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-03 21:12:45.680 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-03 21:12:45.680 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1034 ms
+2020-04-03 21:12:45.866 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-03 21:12:46.496 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-04-03 21:12:46.532 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.9.Final}
+2020-04-03 21:12:46.533 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2020-04-03 21:12:46.607 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-04-03 21:12:46.688 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-04-03 21:12:47.039 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-03 21:12:47.460 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-03 21:12:47.483 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-03 21:12:47.525 [main] WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-04-03 21:12:47.541 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-03 21:12:47.605 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2020-04-03 21:12:47.626 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-04-03 21:12:47.627 [main] INFO  com.junhao.yiqi.YiqiApplication - Started YiqiApplication in 3.254 seconds (JVM running for 4.198)
+2020-04-03 21:34:34.599 [main] INFO  com.junhao.yiqi.YiqiApplication - Starting YiqiApplication on DESKTOP-JQ52JD4 with PID 17108 (D:\yiqi_cable_hou-master\yiqi\target\classes started by huangjunhao in D:\yiqi_cable_hou-master\yiqi)
+2020-04-03 21:34:34.601 [main] INFO  com.junhao.yiqi.YiqiApplication - No active profile set, falling back to default profiles: default
+2020-04-03 21:34:35.034 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-03 21:34:35.086 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47ms. Found 4 repository interfaces.
+2020-04-03 21:34:35.292 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9c23726a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-03 21:34:35.490 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-04-03 21:34:35.499 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2020-04-03 21:34:35.505 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-04-03 21:34:35.505 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2020-04-03 21:34:35.509 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.19] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2020-04-03 21:34:35.509 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.19] using APR version [1.6.5].
+2020-04-03 21:34:35.509 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-03 21:34:35.509 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-03 21:34:35.512 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-04-03 21:34:35.651 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-04-03 21:34:35.654 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-04-03 21:34:35.654 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1024 ms
+2020-04-03 21:34:35.837 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-04-03 21:34:36.392 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-04-03 21:34:36.426 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.9.Final}
+2020-04-03 21:34:36.427 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2020-04-03 21:34:36.500 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-04-03 21:34:36.587 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-04-03 21:34:36.937 [main] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-03 21:34:37.356 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-03 21:34:37.380 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-03 21:34:37.439 [main] WARN  org.thymeleaf.templatemode.TemplateMode - [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-04-03 21:34:37.455 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-04-03 21:34:37.519 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2020-04-03 21:34:37.539 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-04-03 21:34:37.541 [main] INFO  com.junhao.yiqi.YiqiApplication - Started YiqiApplication in 3.182 seconds (JVM running for 4.065)

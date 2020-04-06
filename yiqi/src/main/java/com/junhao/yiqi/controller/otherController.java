@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
 
@@ -23,13 +24,18 @@ public class otherController {
     @RequestMapping("/set")
     public String ddd(Model model){
         model.addAttribute("list",brandJpa.findAll());
+        model.addAttribute("goods",productJpa.findAll());
         return "brand/DealBrand";
     }
 
     @RequestMapping("/brand/delBrand")
     public String del(Integer id){
-        //删除产品表下所有这个品牌的
-        productJpa.delByBrand(brandJpa.nativeQuerybrand(id));
+        //删除产品表下所有这个品牌的  删除了品牌，那个品牌下面的商品都删掉
+        String s = brandJpa.nativeQuerybrand(id);//查找品牌名
+        //product表
+        if(!s.isEmpty()) {
+            productJpa.delByBrand(s);
+        }
         brandJpa.deleteById(id);
         return "redirect:/set";
     }
@@ -46,7 +52,7 @@ public class otherController {
     //@ResponseBody
     public String ssset(Integer id,Model model){
 
-       //return brandJpa.nativeQuerybrand(id);
+        //return brandJpa.nativeQuerybrand(id);
         model.addAttribute("idit",id);
         model.addAttribute("co",brandJpa.nativeQuerybrand(id));
         return "brand/setbrandname";
@@ -66,5 +72,18 @@ public class otherController {
         return brandJpa.nativeQueryfindAllbrandName();
     }
 
+
+
+
+    //测试 上传路径
+    @RequestMapping("/test")
+    @ResponseBody
+    public String getImgDirFile(HttpServletRequest request) {
+
+        // 构建上传文件的存放 "文件夹" 路径
+//        String fileDirPath = request.getSession().getServletContext().getRealPath("\\WEB-INF\\classes\\static\\upload\\");
+        String fileDirPath = request.getSession().getServletContext().getRealPath("WEB-INF/classes/static/upload");
+        return fileDirPath;
+    }
 
 }

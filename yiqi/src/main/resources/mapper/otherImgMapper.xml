@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junhao.yiqi.dao.otherImgMapper">
+  <resultMap id="BaseResultMap" type="com.junhao.yiqi.entity.otherImgEntity">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="brandName" jdbcType="VARCHAR" property="brandName" />
+    <result column="productName" jdbcType="VARCHAR" property="productName" />
+    <result column="productImage" jdbcType="VARCHAR" property="productImage" />
+    <result column="md5" jdbcType="VARCHAR" property="md5" />
+    <result column="width" jdbcType="VARCHAR" property="width" />
+    <result column="height" jdbcType="VARCHAR" property="height" />
+    <result column="size" jdbcType="VARCHAR" property="size" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, brandName,productName,productImage,md5,width,height,size,createtime
+  </sql>
+
+  <insert id="insert" parameterType="com.junhao.yiqi.entity.otherImgEntity">
+    insert into otherimg (id, brandName,productName,productImage,md5,width,height,size,createtime)
+    values (#{id,jdbcType=INTEGER},
+              #{brandName}, #{productName},
+              #{productImage}, #{md5},
+              #{width}, #{height},#{size},
+      #{createtime,jdbcType=TIMESTAMP})
+  </insert>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from otherimg
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+
+  <select id="selectProductFuImg" parameterType="java.lang.String" resultType="java.lang.String">
+    select
+    productImage
+    from otherimg
+    where brandName=#{brandName}
+     and productName = #{productName}
+  </select>
+
+  <!-- 修改除图片外的内容 -->
+  <!--<update id="updateByPrimaryKey" parameterType="com.junhao.yiqi.entity.productEntity">-->
+    <!--update otherimg-->
+    <!--set brandName = #{brandName,jdbcType=VARCHAR},-->
+         <!--productName = #{productName,jdbcType=VARCHAR},-->
+         <!--content = #{content,jdbcType=VARCHAR},-->
+         <!--detail = #{detail,jdbcType=VARCHAR}-->
+    <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--</update>-->
+
+
+
+
+
+</mapper>

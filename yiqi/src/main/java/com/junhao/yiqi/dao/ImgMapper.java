@@ -19,7 +19,7 @@ public interface ImgMapper {
     public List<productEntity> gettp();
 
     //我熟悉的分页类型
-    @Select("select * from product")
+    //@Select("select * from product ")
     public Page<productEntity> gettp2(productEntity productEntity);
 
     @Select("select * from product")
